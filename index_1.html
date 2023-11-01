@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+        <link rel="stylesheet"   href="stylesheet.css" />
+        <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+        <style>
+
+            #particles-js {
+                position: absolute;
+                width: 100%;
+                height: 500vh;
+                z-index: -1;
+            }
+
+
+            body {
+                background-color: #000000;
+                font-family: 'Poppins';
+                font-size: 27px;
+                color:white;
+                margin 25px;
+
+            }
+
+
+
+            #typewriter {
+                position: absolute;
+                top: 45%;
+                left: 50%;
+                font-size: 50px;
+                font-weight: bolder;
+                color:white;
+            }
+
+            #logo{
+                position: absolute;
+                top: 25%;
+                left: 25%;
+            }
+
+            #idkmannugget{
+                font-size: 35px;
+            }
+
+
+
+
+
+            /* Navbar links text color before scrolling */
+            .navbar-light .navbar-nav .nav-link {
+                color: black !important;
+                font-size: 20px;
+                margin-left: auto;
+                font-weight: bold;
+            }
+
+            /* Navbar links text color after scrolling */
+            .navbar-scrolled .navbar-light .navbar-nav .nav-link {
+                color: white !important;
+            }
+
+            #navbar.transparent {
+                background-color: transparent !important;
+                transition: background-color 0.3s ease;
+                color: white !important;
+
+            }
+
+            #navbar.scrolled {
+                background-color: white !important;
+                transition: background-color 0.3s ease;
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* White shadow effect */
+            }
+            .navbar-nav {
+                margin-left: auto;
+            }
+
+            .navbar-light .navbar-nav .nav-link:hover {
+                border-bottom: 3px solid #ecf01f; /* Adjust the thickness and color as needed */
+
+            }
+
+
+
+
+            @media (max-width: 768px) {
+                /* Define styles for smaller screens */
+                body {
+                    font-size: 16px;
+                }
+                /* Add more responsive styles here */
+            }
+
+            @media (max-width: 768px) {
+                body {
+                    font-size: 16px;
+                }
+
+                #typewriter {
+                    font-size: 30px;
+                }
+
+                .btn {
+                    top: 50%;
+                    left: 50%;
+                }
+            }
+
+            .about{
+                width:100%;
+                height: calc(100vh);
+                padding:78px 0px;
+
+            }
+
+            .skills{
+                width:100%;
+                height: calc(100vh);
+                padding:78px 0px;   
+            }
+
+            .about img{
+                height: auto;
+                width: 200px;
+                float: left; /* Float the image to the left */
+                margin-right: 20px;
+            }
+
+            .about-text{
+                width:550px;
+            }
+
+            .main{
+                width:1130px;
+                max-width:95%;
+                margin: 0 auto;
+                display:flex;
+                align-items:center;
+                justify-content:space-around;
+
+            }
+
+
+
+            span{
+                color:yellow;
+            }
+
+
+
+            #pokemon{
+                padding: 20px 0;
+            }
+
+            .card-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center; /* Align horizontally to the center */
+                align-items: center; /* Align vertically to the center */
+            }
+
+            .card {
+                
+                width:420px;
+                padding: 20px;
+                background-color: #000000;
+                border-radius: 5px;
+                border: 1px solid yellow;
+                border-radius: 30px;
+                box-shadow: 0 0 10px rgba(255, 240, 0, 1);
+                flex: 0 0 calc(33.333% - 40px); /* Adjust the width for your layout */
+            }
+
+            @media (max-width: 768px) {
+                .card {
+                    width: calc(50% - 20px); /* Adjust the width for smaller screens */
+                }
+            }
+            
+            .card-text{
+                display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px
+            }
+
+
+
+        </style>
+    </head>
+
+    <body>
+
+        <section class="about">
+            <div class ="main">
+                <img src="images/IMG_0356.png" alt="picture of me">
+                <div class="about-text">
+                    <h1> About me</h1>
+                    <h5>Developer <span> & Designer</span> </h5>
+                    <p>Hi,my name is Aloysius Chew an I am a year 2 student at Republic Polytechnic studying Digital Design and Development and working towards being a developer.</p>
+                    <button type="button">see work</button>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="idk">
+            <div class="container-fluid mt-3">
+                <div id="idk" class="row"  style="padding:0px 75px 0px">
+
+                    <div class="col">
+
+                        <div class="card" >
+
+
+                            <div class="card-body text-white">
+                                <h3 class="card-title"><b>Front-end Development</b></h3>
+
+                                <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">HTML</p>
+                                <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">CSS</p>
+                                <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">PHP</p>
+                                <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Javascript</p>
+
+
+
+
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col">
+
+                        <div class="card">
+
+
+                            <div class="card-body text-white">
+                                <h3 class="card-title"><b>Back-end Development</b></h3>
+                                <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Python</p>
+                                <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Java</p>
+                                <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">MongoDB</p>
+                                <p class="card-text" style=" box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">MySQL</p>
+
+
+
+
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col">
+
+                        <div class="card" >
+
+
+                            <div class="card-body text-white">
+                                <h3 class="card-title"><b>Others</b></h3>
+                                <div><p class="card-text" style="display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Adobe XD</p>
+                                    <p class="card-text" style="display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Photoshop</p>
+                                    <p class="card-text" style="display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Illustrator</p></div>
+                                <div><p class="card-text" style="display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Unity</p></div>
+
+
+
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+
+
+</html>

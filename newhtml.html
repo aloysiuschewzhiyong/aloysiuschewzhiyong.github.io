@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+
+        <script>
+            // Typewriter effect JavaScript
+            var speed = 39;
+            var deletespeed = 5;
+            var forward = true; // Flag to control typing direction
+
+            function typeWriter() {
+                var i = 0;
+                var typewriterElement = document.getElementById("typewriter");
+
+                var initialText = "Hi, my name is Aloysius";
+                var defaultText = "Welcome to my portfolio";
+
+                var currentText = initialText; // Start with the initial text
+
+                function type() {
+                    if (i < currentText.length && forward) {
+                        typewriterElement.textContent += currentText.charAt(i);
+                        i++;
+                        setTimeout(type, speed);
+                    } else {
+                        forward = false; // Change direction to rewinding
+                        setTimeout(rewind, 2000); // Wait for 2 seconds, then rewind
+                    }
+                }
+
+                function rewind() {
+                    if (i >= 0 && !forward) {
+                        typewriterElement.textContent = currentText.substring(0, i);
+                        i--;
+                        setTimeout(rewind, deletespeed);
+                    } else {
+                        forward = true; // Change direction to typing
+                        i = 0; // Reset the position
+
+                        // Switch between initial and default text
+                        currentText = currentText === initialText ? defaultText : initialText;
+                        setTimeout(type, 0); // Start typing again
+                    }
+                }
+
+                type();
+            }
+
+            // Start the typewriter effect
+            typeWriter();
+        </script>
+
+        <h1 id="idkmannugget"><span id="typewriter"></span></h1>
+    </body>
+</html>

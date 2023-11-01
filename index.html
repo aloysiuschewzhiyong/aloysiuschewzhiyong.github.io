@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+        <link rel="stylesheet"   href="stylesheet.css" />
+        <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+           <!-- update the core fontawesome file -->
+    <link href="/your_path_to_version_6_files/css/fontawesome.css" rel="stylesheet">
+
+    <!-- update any styles .css files you have linked -->
+    <link href="/your_path_to_version_6_files/css/solid.css" rel="stylesheet">
+    <link href="/your_path_to_version_6_files/css/brands.css" rel="stylesheet">
+
+    <!-- update existing v5 CSS to use v6 icons and assets -->
+    <link href="/your-path-to-fontawesome/css/v5-font-face.css" rel="stylesheet" />
+  
+
+
+        <style>
+
+
+            #particles-js {
+                position: absolute;
+                width: 100%;
+                height: 520vh;
+                z-index: -1;
+            }
+
+
+            body {
+                background-color: #000000;
+                font-family: 'Poppins';
+                font-size: 18px;
+                color:white;
+                transition: 0.3s;
+
+            }
+
+
+
+            #typewriter {
+                position: absolute;
+                top: 45%;
+                left: 50%;
+                font-size: 50px;
+                font-weight: bolder;
+                color:white;
+            }
+
+            #logo{
+                position: absolute;
+                top: 25%;
+                left: 25%;
+            }
+
+            #idkmannugget{
+                font-size: 35px;
+            }
+
+
+
+
+
+            .btn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 13rem;
+                overflow: hidden;
+                height: 3rem;
+                background-size: 300% 300%;
+                backdrop-filter: blur(1rem);
+                border-radius: 5rem;
+                transition: 0.5s;
+                animation: gradient_301 5s ease infinite;
+                border: double 4px transparent;
+                background-image: linear-gradient(#000000, #000000), linear-gradient(137.48deg, #ffdb3b 10%, #ff9b17d7 45%, #f9ff41 67%, #feb200d7 87%);
+                background-origin: border-box;
+                background-clip: content-box, border-box;
+            }
+
+            #container-stars {
+                position: absolute;
+                z-index: -1;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                transition: 0.5s;
+                backdrop-filter: blur(1rem);
+                border-radius: 5rem;
+            }
+
+            strong {
+                z-index: 3;
+                font-family: 'Poppins';
+                font-size: 20px;
+
+                color: #FFFFFF;
+            }
+
+            #glow {
+                position: absolute;
+                display: flex;
+                width: 122rem;
+            }
+
+            .circle {
+                width: 100%;
+                height: 30px;
+                filter: blur(2rem);
+                animation: pulse_3011 4s infinite;
+                z-index: -1;
+            }
+
+            .circle:nth-of-type(1) {
+                background: rgba(0, 0, 1860 0.936);
+            }
+
+            .circle:nth-of-type(2) {
+                background: rgba(0, 0, 1860 0.936);
+            }
+
+            .btn:hover #container-stars {
+                z-index: 1;
+                background-color: #000000;
+            }
+
+            .btn:hover {
+                transform: scale(1.1)
+            }
+
+            .btn:active {
+                border: double 4px #FE53BB;
+                background-origin: border-box;
+                background-clip: content-box, border-box;
+                animation: none;
+
+            }
+
+            .btn:active .circle {
+                background: #FE53BB;
+            }
+
+            #stars {
+                position: relative;
+                background: transparent;
+                width: 200rem;
+                height: 200rem;
+            }
+
+            #stars::after {
+                content: "";
+                position: absolute;
+                top: -10rem;
+                left: -100rem;
+                width: 100%;
+                height: 100%;
+                animation: animStarRotate 90s linear infinite;
+            }
+
+            #stars::after {
+                background-image: radial-gradient(#ffffff 1px, transparent 1%);
+                background-size: 50px 50px;
+            }
+
+            #stars::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: -50%;
+                width: 170%;
+                height: 500%;
+                animation: animStar 60s linear infinite;
+            }
+
+            #stars::before {
+                background-image: radial-gradient(#ffffff 1px, transparent 1%);
+                background-size: 50px 50px;
+                opacity: 0.5;
+            }
+
+            @keyframes animStar {
+                from {
+                    transform: translateY(0);
+                }
+
+                to {
+                    transform: translateY(-135rem);
+                }
+            }
+
+            @keyframes animStarRotate {
+                from {
+                    transform: rotate(360deg);
+                }
+
+                to {
+                    transform: rotate(0);
+                }
+            }
+
+            @keyframes gradient_301 {
+                0% {
+                    background-position: 0% 50%;
+                }
+
+                50% {
+                    background-position: 100% 50%;
+                }
+
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+
+            @keyframes pulse_3011 {
+                0% {
+                    transform: scale(0.75);
+                    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+                }
+
+                70% {
+                    transform: scale(1);
+                    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+                }
+
+                100% {
+                    transform: scale(0.75);
+                    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+                }
+            }
+
+
+            /* Navbar links text color before scrolling */
+            .navbar-light .navbar-nav .nav-link {
+                color: black !important;
+                font-size: 20px;
+                margin-left: auto;
+            }
+
+            .nav-link{
+                opacity:0.8;
+            }
+
+            /* Navbar links text color after scrolling */
+            .navbar-scrolled .navbar-light .navbar-nav .nav-link {
+                color: black !important;
+            }
+
+            #navbar.transparent {
+                background-color: transparent !important;
+                transition: background-color 0.3s ease;
+                color: white !important;
+
+            }
+
+            #navbar.scrolled {
+                background-color: white !important;
+                transition: background-color 0.3s ease;
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); 
+            }
+            .navbar-nav {
+                margin-left: auto;
+            }
+
+            .navbar-light .navbar-nav .nav-link:hover {
+                border-bottom: 3px solid #ecf01f; 
+                font-weight:bold;
+                transition-duration:0s;
+
+            }
+
+
+
+
+
+            .about{
+                display: flex;
+                width:100%;
+                height: calc(100vh);
+                padding:78px 0px;
+
+            }
+
+            .skills{
+                width:100%;
+                height: calc(100vh);
+                padding:78px 0px;   
+            }
+
+            .about img{
+                height: auto;
+                width: 200px;
+                float: left; /* Float the image to the left */
+                margin-right: 20px;
+            }
+
+            .about-text{
+                width:550px;
+            }
+
+            .main{
+                width:1130px;
+                max-width:95%;
+                margin: 0 auto;
+                display:flex;
+                align-items:center;
+                justify-content:space-around;
+
+            }
+
+            .main2{
+                width:1690px;
+                max-width:95%;
+                margin: 0 auto;
+                display:flex;
+                align-items:center;
+                justify-content:space-around;
+
+            }
+
+
+
+            span{
+                color:yellow;
+            }
+
+
+
+            #pokemon{
+                padding: 20px 0;
+            }
+
+
+
+            .card {
+                width: 350px;
+                padding: 20px 0 20px;
+                margin:10px;
+                background-color: #000000;
+                border-radius: 5px;
+                border: 3px solid yellow;
+                border-radius: 30px;
+                box-shadow: 0 0 10px rgba(255, 240, 0, 0);
+
+                transition: transform 0.5s;
+            }
+
+            .card:hover {
+                transform: translateY(-20px);
+                box-shadow: 0 0 10px rgba(255, 240, 0, 100);
+            }
+
+            .container-idk {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+
+            .typing-cursor {
+                font-weight: 100;
+                color: white;
+                animation: blink 1s infinite;
+            }
+
+            @keyframes blink {
+                0%, 100% {opacity: 1;}
+                50% {opacity: 0;}
+            }
+
+
+
+
+
+            .card-title{
+                font-size:24px;
+                text-align: center;
+                margin-bottom: 20px;
+                font-weight: bold;
+
+
+            }
+
+            .container-idk {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                flex-shrink: 0;
+            }
+
+
+
+
+
+            @media (max-width: 768px) {
+                body {
+                    font-size: 16px;
+                }
+
+                #typewriter {
+                    font-size: 30px;
+                }
+
+                .btn {
+                    top: 50%;
+                    left: 50%;
+                }
+                pokemon{
+                    margin-bottom: 100px;
+                }
+
+
+
+
+            }
+
+            .card p {
+                margin-bottom: 2px;
+            }
+
+            .skillsForProjects{
+                margin-top: 20px;
+            }
+
+            .card-img{
+                width:500px; margin-left:20px;
+            }
+
+
+            .footer{
+                
+                margin-top:100px;
+                padding:40px 0;
+                background-color: #fff;
+                height:269px;
+                box-shadow: 0 0 10px rgba(255, 255, 255, 1); 
+
+            }
+
+            .footer .social{
+                text-align:center;
+                padding-bottom:25px;
+                color:#4b4c4d;
+
+            }
+            .footer .social a{
+                text-align:center;
+                font-size:24px;
+                color:inherit;
+                border:1px solid #ccc;
+                width:40px;
+                height:40px;
+                line-height:38px;
+                display:inline-block;
+                border-radius:50%;
+                margin:0.8px;
+                opacity:0.75;
+
+            }
+
+            .footer .social a:hover{
+                opacity:0.9;
+
+
+            }
+
+            .footer ul{
+
+                margin-top:0;
+                padding:0;
+                list-style:none;
+                font-size:18px;
+                line-height:1.6;
+                margin-bottom:0;
+                text-align:center;
+
+            }
+
+            .footer ul li a{
+                margin:10px;
+                color:black;
+                text-decoration:none;
+                opacity:0.8;
+
+            }
+
+            .footer ul li{
+                display: inline-block;
+                padding: 0 15;
+
+            }
+
+            .footer ul li a:hover{
+                font-weight: bold;
+
+            }
+
+            .footer .copyright{
+                margin-top:15px;
+                text-align:center;
+                font-size:13px;
+                color:#aaa;
+            }
+
+
+
+
+
+
+
+
+        </style>
+    </head>
+
+    <body>
+
+        <script>
+            $(document).ready(function () {
+                // Change the navbar background and text color when scrolling
+                $(window).scroll(function () {
+                    if ($(window).scrollTop() > 50) {
+                        $('#navbar').removeClass('transparent').addClass('scrolled');
+                    } else {
+                        $('#navbar').removeClass('scrolled').addClass('transparent');
+                    }
+                });
+            });
+
+        </script>
+
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navbar">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="scrollToDiv('egg');">About Me</a>
+                        </li>
+                        <li class="nav-item dropdown"> <!-- Add "dropdown" class here -->
+                            <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Projects
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
+                                <li>
+                                    <a class="dropdown-item" onclick="scrollToDiv('versace-eros');">Featured Projects</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" onclick="scrollToDiv('project2');">All Projects</a>
+                                </li>
+                                <!-- Add more project links as needed -->
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+
+        <section id="spiderman" style="height: calc(100vh);">
+            <div id="particles-js"></div>
+            <h1 id="idkmannugget"><span id="typewriter"></span></h1>
+
+
+            <button type="button" class="btn" style="top: 60%;
+                    left: 61%; position: absolute;" onclick="scrollToDiv('egg');">
+                <strong>Get Started</strong>
+                <div id="container-stars">
+                    <div id="stars"></div>
+                </div>
+
+                <div id="glow">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+            </button>
+
+
+            <img id="logo" src="images" alt="logo" style="width: 250px; height: auto;">
+
+            <script>
+                particlesJS.load('particles-js', 'particles.json', function () {
+                    console.log('Particles.js loaded!');
+                });
+
+            </script>
+
+            <script>
+
+                window.onload = function () {
+                    var cursor = document.getElementById('cursor');
+                    cursor.style.opacity = 1;
+                    cursor.className += ' typing-cursor';
+                }
+                // Typewriter effect JavaScript
+                var speed = 39;
+                var deletespeed = 20;
+                var forward = true; // Flag to control typing direction
+
+                function typeWriter() {
+                    var i = 0;
+                    var typewriterElement = document.getElementById("typewriter");
+
+                    var initialText = "Hi, my name is Aloysius";
+                    var defaultText = "Welcome to my portfolio";
+
+                    var currentText = initialText; // Start with the initial text
+
+                    function type() {
+                        if (i < currentText.length && forward) {
+                            typewriterElement.textContent += currentText.charAt(i);
+                            i++;
+                            setTimeout(type, speed);
+                        } else {
+                            forward = false; // Change direction to rewinding
+                            setTimeout(rewind, 2000); // Wait for 2 seconds, then rewind
+                        }
+                    }
+
+                    function rewind() {
+                        if (i >= 0 && !forward) {
+                            typewriterElement.textContent = currentText.substring(0, i);
+                            i--;
+                            setTimeout(rewind, deletespeed);
+                        } else {
+                            forward = true; // Change direction to typing
+                            i = 0; // Reset the position
+
+                            // Switch between initial and default text
+                            currentText = currentText === initialText ? defaultText : initialText;
+                            setTimeout(type, 0); // Start typing again
+                        }
+                    }
+
+                    type();
+                }
+
+                // Start the typewriter effect
+                typeWriter();
+            </script>
+
+
+
+
+        </section><br><br>  
+
+        <section id="egg" class="about">
+            <div class ="main">
+                <img src="images/IMG_0356.png" alt="picture of me">
+                <div class="about-text">
+                    <h1 style="font-weight:bold; font-size:80px; margin-bottom:20px; margin-top:50px;"> About me</h1>
+                    <h5 style="font-size:36px;margin-bottom:25px;">Designer <span> & Developer</span> </h5>
+                    <p style="line-height:30px;font-size:18px; margin-bottom: 45px;">
+                        Hi, my name is Aloysius Chew an I am a year 2 student at Republic Polytechnic studying Digital Design and Development and working towards being a developer. 
+                        This website will feature some of my works in the projects tab
+                    </p>
+                </div>
+
+
+
+            </div>
+        </section>
+
+        <section id="pokemon" class="skills">
+            <div class ="main">     
+                <div class="about-text">
+                    <h1 style="font-weight:bold; font-size:80px; margin-bottom:20px; margin-top:50px;">Skills</h1>
+                    <h5 style="font-size:36px;margin-bottom:45px;"><span>Skills</span> picked up over the years </h5>
+
+
+                </div>
+            </div>
+
+
+            <div class="container-idk">
+
+                <div class="card" >
+
+                    <div class="card-body text-white">
+                        <h4 class="card-title"><b>Front-end Development</b></h4>
+
+                        <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">HTML</p>
+                        <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">CSS</p>
+                        <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">PHP</p>
+                        <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Javascript</p>
+
+
+                    </div>
+                </div>
+
+
+
+
+                <div class="card">
+
+                    <div class="card-body text-white">
+                        <h4 class="card-title"><b>Back-end Development</b></h4>
+                        <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Python</p>
+                        <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Java</p>
+                        <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">MongoDB</p>
+                        <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">MySQL</p>
+
+
+                    </div>
+                </div>
+
+
+
+                <div class="card" >
+
+                    <div class="card-body text-white">
+                        <h4 class="card-title"><b>Others</b></h4>
+                        <p class="card-text" style="display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Adobe XD</p>
+                        <p class="card-text" style="display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Photoshop</p>
+                        <p class="card-text" style="display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Illustrator</p>
+                        <p class="card-text" style="display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px; margin-top: 3px;">Unity</p>
+
+
+
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+        </section>
+
+        <section id="versace-eros" class="projects">
+            <div class ="main">     
+                <div class="about-text">
+                    <h1 style="font-weight:bold; font-size:80px; margin-bottom:20px; margin-top:50px;">Featured Projects</h1>
+
+
+
+                </div>
+            </div>
+            <div>
+                <h5 style="font-size:36px;margin-bottom:45px; margin-left:300px;">Here you will see some of my favourite <span>projects</span></h5>
+            </div>
+
+            <div id="carouselProjects" class="carousel slide" data-ride="carousel" style="margin-bottom:88px;">
+                <div class="carousel-inner" style="padding:20px;">
+                    <div class="carousel-item active">
+                        <div class="card" style="width: 960px; height:auto;margin-left: auto; margin-right: auto; padding:30px;">
+                            <div class="row">
+                                <div class="col">
+                                    <img src="images/cinephileMainPic.png" class="card-img" alt="project pic">
+                                </div>
+                                <div class="col">
+                                    <div class="card-body">
+                                        <h4 class="card-title" style="text-align:left;">CinephilePicks (CP.)</h4>
+                                        <p class="card-text">CinephilePicks (CP) is a dynamic movie review website. It is made using HTML,CSS and PHP and connects to a MySQL databse.</p>
+                                        <p class="card-text"><small class="text-muted">Front-end & Back-end</small></p>
+                                        <div class="skillsForProjects" >
+                                            <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">HTML</p>
+                                            <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">CSS</p>
+                                            <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">PHP</p>
+                                            <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">MySQL</p>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card" style="width: 960px; height:auto;margin-left: auto; margin-right: auto; padding:30px;">
+                            <div class="row">
+                                <div class="col">
+                                    <img src="images/cinephileMainPic.png" class="card-img" alt="project pic" style="width:500px; margin-left:20px;">
+                                </div>
+                                <div class="col">
+                                    <div class="card-body">
+                                        <h4 class="card-title" style="text-align:left;">Clicky Clacky</h4>
+                                        <p class="card-text">Clicky Clacky</p>
+                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card" style="width: 960px; height:auto;margin-left: auto; margin-right: auto; padding:30px;">
+                            <div class="row">
+                                <div class="col">
+                                    <img src="images/cinephileMainPic.png" class="card-img" alt="project pic" style="width:500px; margin-left:20px; border: 1px solid white;">
+                                </div>
+                                <div class="col">
+                                    <div class="card-body">
+                                        <h4 class="card-title" style="text-align:left;">CinephilePicks (CP.)</h4>
+                                        <p class="card-text">CinephilePicks (CP) is a dynamic movie review website. It is made using HTML,CSS and PHP and connects to a MySQL databse.</p>
+                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselProjects" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselProjects" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+
+
+
+
+        </section>
+        
+        <section id="egg" class="about">
+            <div class ="main">
+                <div class="about-text">
+                    <h1 style="font-weight:bold; font-size:80px; margin-bottom:20px; margin-top:50px;"> Contact me</h1>
+                    <h5 style="font-size:36px;margin-bottom:25px;">Ask me  <span>anything</span> </h5>
+                    <p style="line-height:30px;font-size:18px; margin-bottom: 45px;">
+                        I will get back as soon as possible
+                    </p>
+                </div>
+                <img src="images/IMG_0356.png" alt="picture of me"> 
+
+
+
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+        <script>
+            function scrollToDiv(targetId) {
+                var element = document.getElementById(targetId);
+                element.scrollIntoView();
+            }
+        </script>
+
+
+        <section class="footer">
+            <div class="social">
+                <a href="mailto:22001095@myrp.edu.sg"><i class="fa fa-envelope"></i></a>
+                <a href="https://github.com/aloysiuschewzhiyong"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-brands fa-discord"></i></a>
+                <a href="https://www.linkedin.com/in/aloysius-chew-880609244/"><i class="fa-brands fa-linkedin"></i></a>
+
+            </div>
+
+            <ul class="list">
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">About me</a>
+                </li>
+                <li>
+                    <a href="#">Projects</a>
+                </li>
+                <li>
+                    <a href="#">Contact me</a>
+                </li>
+            </ul>
+            <p class="copyright">
+                Aloysius Chew © 2023
+            </p>
+
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+
+
+</html>
