@@ -31,7 +31,7 @@
             #particles-js {
                 position: absolute;
                 width: 100%;
-                height: 200%;
+                height: 120%;
                 z-index: -1;
             }
 
@@ -510,14 +510,14 @@
                 display:flex;
                 overflow-x:auto;
                 white-space:nowrap;
-                 -webkit-overflow-scrolling: touch;
+                -webkit-overflow-scrolling: touch;
             }
-            .wrapper::-webkit-scrollbar{
+            /* Remove the comments around ::-webkit-scrollbar */
+            ::-webkit-scrollbar {
                 width:0;
             }
-            
 
-            
+
             .card {
                 margin:10px;
                 background-color: #000000;
@@ -532,10 +532,12 @@
                 transform: translateY(-20px);
                 box-shadow: 0 0 20px rgba(255, 240, 0, 0.5);
             }
-            
+
             .item{
-               height:auto; margin:10px;
+                height:auto; margin:10px;
             }
+
+
 
 
 
@@ -653,21 +655,50 @@
 
 
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
 
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                // Smooth scrolling for anchor links
-                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                    anchor.addEventListener('click', function (e) {
-                        e.preventDefault();
-
-                        document.querySelector(this.getAttribute('href')).scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    });
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
                 });
             });
-        </script>
+        });
+
+        const slider = document.querySelector('.wrapper');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.classList.add('active');
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX);
+            slider.scrollLeft = scrollLeft - walk;
+        });
+    });
+</script>
 
 
         <section class="footer">
