@@ -1,7 +1,8 @@
-
+   
 @media (max-width: 768px) {
     body {
         font-size: 16px;
+        padding:20px;
     }
 
     #typewriter {
@@ -12,39 +13,68 @@
         top: 50%;
         left: 50%;
     }
-}
+    
+                #egg5{
+                padding: 40px 15%;
+            }
+
+            .contact-form .input-row {
+                display: flex;
+                margin-bottom: 10px;
+                gap:7px;
+            }
+
+            .contact-form .input-row input[type="text"],
+            .contact-form .input-row input[type="email"] {
+                margin-bottom:0px;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+                font-size: 16px;
+                margin:0;
+            }
 
 
-@```
-media screen and
-(max4. Using-width: Media Qu 7eries
-68pxAnother) { way to
-make/* Add your your website respons custom CSS rulesive here */
-}
-is by```
-using CSS
-5 media. Testing queries. Your Website Media queries
-Fin allow youally, to apply different styles based on it' the sizes important of the to test user' your website ons various devices and screen. screen sizes Here' to ensures an that it example of looks and functions how to correctly. use media You can use online tools like BrowserStack or use queries your:
 
-own devices to test```css your website.
-/*
+            .contact-form input[type="text"],
+            .contact-form input[type="email"],
+            .contact-form input[type="text"],
+            .contact-form textarea {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 10px;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+                font-size: 16px;
+                box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, 0.2);
+            }
 
-CSS forBy following these large screens steps, */
-you can.container make your website {
-responsive   and adaptable width to different:  screen sizes80 and devices%;
-.   margin: auto;
+            /* Apply CSS to the submit button */
+            .contact-form input[type="submit"] {
+                width: 100%;
+                padding: 10px;
+                background-color: #007BFF; /* Change the background color to your preference */
+                color: #fff; /* Text color */
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background-color 0.3s; /* Add a smooth transition effect */
+            }
+
+            .contact-form input[type="submit"]:hover {
+                background-color: #0056b3; /* Change the background color on hover */
+            }
+
+
+
+            .contact-form textarea{
+                resize:none;
+                height:100px;
+
+            }
+
+
+
 }
 
-/* CSS for medium screens */
-@media screen and (max-width: 768px) {
-.container {
-width: 90%;
-}
-}
-
-/* CSS for small screens */
-@media screen and (max-width: 480px) {
-.container {
-width: 100%;
-}
-}

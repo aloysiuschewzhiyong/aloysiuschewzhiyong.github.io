@@ -1,70 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Responsive Cards</title>
-        <style>
-            .container-idk {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal Scroll Section</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
 
-            .card {
-                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-                transition: 0.3s;
-                width: 200px;
-                height: 300px;
-                margin: 20px;
-                text-align: center;
-                padding: 20px;
-                background-color: #f9f9f9;
-            }
+        .horizontal-section {
+            width: 100vw;
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+        }
 
-            .card:hover {
-                box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-            }
+        .scroll-item {
+            flex: 0 0 auto;
+            width: 100vw;
+            height: 100vh;
+            scroll-snap-align: start;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
 
-            .card-title {
-                margin-bottom: 20px;
-            }
-
-            .card-text {
-                margin-bottom: 10px;
-                padding: 5px 10px 5px 10px;
-                background: white;
-                border-radius: 10px;
-                color: black;
-                font-size: 15px;
-            }
-        </style>
-    </head>
-
-    <body>
-        <div class="container-idk">
-            <div class="card">
-                <h3 class="card-title">Front-end Development</h3>
-                <p class="card-text">HTML</p>
-                <p class="card-text">CSS</p>
-                <p class="card-text">JavaScript</p>
-                <p class="card-text">Bootstrap</p>
-            </div>
-
-            
-            <div class="card">
-                <h3 class="card-title">Graphic Design</h3>
-                <p class="card-text">Adobe XD</p>
-                <p class="card-text">Photoshop</p>
-                <p class="card-text">Illustrator</p>
-            </div>
-
-            <div class="card">
-                <h3 class="card-title">Game Development</h3>
-                <p class="card-text">Unity</p>
-            </div>
-        </div>
-    </body>
+<body>
+    <div class="horizontal-section">
+        <div class="scroll-item">Section 1</div>
+        <div class="scroll-item">Section 2</div>
+        <div class="scroll-item">Section 3</div>
+        <!-- Add more sections as needed -->
+    </div>
+</body>
 
 </html>

@@ -2,6 +2,7 @@
 <html>
 
     <head>
+        <title>AloysiusChewZhiYong</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -14,54 +15,88 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-           <!-- update the core fontawesome file -->
-    <link href="/your_path_to_version_6_files/css/fontawesome.css" rel="stylesheet">
 
-    <!-- update any styles .css files you have linked -->
-    <link href="/your_path_to_version_6_files/css/solid.css" rel="stylesheet">
-    <link href="/your_path_to_version_6_files/css/brands.css" rel="stylesheet">
-
-    <!-- update existing v5 CSS to use v6 icons and assets -->
-    <link href="/your-path-to-fontawesome/css/v5-font-face.css" rel="stylesheet" />
-  
 
 
         <style>
+
+            *{
+                padding:0;
+                margin:0;
+                box-sizing:border-box;
+                transition: all 0.3s;
+            }
 
 
             #particles-js {
                 position: absolute;
                 width: 100%;
-                height: 520vh;
+                height: 520%;
                 z-index: -1;
             }
 
 
             body {
+                display:flex;
                 background-color: #000000;
                 font-family: 'Poppins';
                 font-size: 18px;
                 color:white;
                 transition: 0.3s;
+                flex-direction: column;
+
 
             }
 
 
+            body::-webkit-scrollbar {
+                display:none;
+            }
+
+
+            #spiderman{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
 
             #typewriter {
-                position: absolute;
-                top: 45%;
-                left: 50%;
                 font-size: 50px;
                 font-weight: bolder;
                 color:white;
             }
 
-            #logo{
-                position: absolute;
-                top: 25%;
-                left: 25%;
+
+            .containerHome{
+                display: flex;
+                justify-content: space-around;
+                padding:0;
+
             }
+
+            .left, .right {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                flex:1;
+            }
+
+            .left{
+                width: 620px;
+            }
+
+            .right{
+                width: 620px;
+            }
+
+
+
+
 
             #idkmannugget{
                 font-size: 35px;
@@ -267,7 +302,7 @@
             #navbar.scrolled {
                 background-color: white !important;
                 transition: background-color 0.3s ease;
-                box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); 
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); 
             }
             .navbar-nav {
                 margin-left: auto;
@@ -309,8 +344,10 @@
                 width:550px;
             }
 
-            .main{
-                width:1130px;
+
+
+            .main{  
+                width:69vw;
                 max-width:95%;
                 margin: 0 auto;
                 display:flex;
@@ -320,13 +357,27 @@
             }
 
             .main2{
-                width:1690px;
+
                 max-width:95%;
                 margin: 0 auto;
                 display:flex;
                 align-items:center;
                 justify-content:space-around;
 
+            }
+
+            .main3{
+                max-width:95%;
+                margin: 0 auto;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+
+            }
+
+            .projects-text{
+                width:100vw;
+                justify-text: center;
             }
 
 
@@ -348,7 +399,6 @@
                 padding: 20px 0 20px;
                 margin:10px;
                 background-color: #000000;
-                border-radius: 5px;
                 border: 3px solid yellow;
                 border-radius: 30px;
                 box-shadow: 0 0 10px rgba(255, 240, 0, 0);
@@ -358,26 +408,10 @@
 
             .card:hover {
                 transform: translateY(-20px);
-                box-shadow: 0 0 10px rgba(255, 240, 0, 100);
-            }
-
-            .container-idk {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
+                box-shadow: 0 0 20px rgba(255, 240, 0, 0.5);
             }
 
 
-            .typing-cursor {
-                font-weight: 100;
-                color: white;
-                animation: blink 1s infinite;
-            }
-
-            @keyframes blink {
-                0%, 100% {opacity: 1;}
-                50% {opacity: 0;}
-            }
 
 
 
@@ -403,27 +437,11 @@
 
 
 
-            @media (max-width: 768px) {
-                body {
-                    font-size: 16px;
-                }
-
-                #typewriter {
-                    font-size: 30px;
-                }
-
-                .btn {
-                    top: 50%;
-                    left: 50%;
-                }
-                pokemon{
-                    margin-bottom: 100px;
-                }
 
 
 
 
-            }
+
 
             .card p {
                 margin-bottom: 2px;
@@ -439,12 +457,12 @@
 
 
             .footer{
-                
+                width:auto;
                 margin-top:100px;
                 padding:40px 0;
                 background-color: #fff;
                 height:269px;
-                box-shadow: 0 0 10px rgba(255, 255, 255, 1); 
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); 
 
             }
 
@@ -513,6 +531,132 @@
                 color:#aaa;
             }
 
+            #egg5{
+                padding: 40px 15%;
+            }
+
+            .contact-form .input-row {
+                display: flex;
+                margin-bottom: 10px;
+                gap:7px;
+            }
+
+            .contact-form .input-row input[type="text"],
+            .contact-form .input-row input[type="email"] {
+                margin-bottom:0px;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+                font-size: 16px;
+                margin:0;
+            }
+
+
+
+            .contact-form input[type="text"],
+            .contact-form input[type="email"],
+            .contact-form input[type="text"],
+            .contact-form textarea {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 10px;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+                font-size: 16px;
+                box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, 0.2);
+            }
+
+            /* Apply CSS to the submit button */
+            .contact-form input[type="submit"] {
+                width: 100%;
+                padding: 10px;
+                background-color: #007BFF; /* Change the background color to your preference */
+                color: #fff; /* Text color */
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background-color 0.3s; /* Add a smooth transition effect */
+            }
+
+            .contact-form input[type="submit"]:hover {
+                background-color: #0056b3; /* Change the background color on hover */
+            }
+
+
+
+            .contact-form textarea{
+                resize:none;
+                height:100px;
+
+            }
+
+            h1{
+                font-size: 80px;
+            }
+
+            h5{
+                font-size:26px;
+            }
+
+
+
+            @media (max-width: 768px) {
+                body {
+                    font-size: 16px;
+                }
+
+                #typewriter {
+                    font-size: 30px;
+                }
+
+                .btn {
+                    top: 50%;
+                    left: 50%;
+                }
+                pokemon{
+                    margin-bottom: 100px;
+                }
+
+                .about{
+                    flex-direction: column;
+                }
+                .main{
+                    flex-direction:column;
+                }
+
+                .containerHome{
+                    flex-direction: column;
+                }
+
+                h1{
+                    font-size: 50px;
+                }
+
+                .main{  
+                    width:69vw;
+                    max-width:95%;
+                    margin: 0 auto;
+                    display:flex;
+                    align-items:center;
+                    justify-content:space-around;
+
+                }
+            }
+
+            #logo:hover{
+                transform: rotate(360deg);
+                transition: all 0.5s;
+            }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -547,10 +691,10 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Home</a>
+                            <a class="nav-link" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" onclick="scrollToDiv('egg');">About Me</a>
+                            <a class="nav-link" href="index.html#egg">About Me</a>
                         </li>
                         <li class="nav-item dropdown"> <!-- Add "dropdown" class here -->
                             <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -558,44 +702,80 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
                                 <li>
-                                    <a class="dropdown-item" onclick="scrollToDiv('versace-eros');">Featured Projects</a>
+                                    <a class="dropdown-item" href="index.html#versace-eros">Featured Projects</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" onclick="scrollToDiv('project2');">All Projects</a>
+                                    <a class="dropdown-item" href="projects.html#pokemon">All Projects</a>
                                 </li>
-                                <!-- Add more project links as needed -->
+
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link">Contact</a>
+                            <a class="nav-link" href="index.html#egg5">Contact</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-
+        <div id="particles-js"></div>
 
 
         <section id="spiderman" style="height: calc(100vh);">
-            <div id="particles-js"></div>
-            <h1 id="idkmannugget"><span id="typewriter"></span></h1>
 
+            <div class="containerHome">
+                <div class="left">
+                    <div id="logo" style="width:300px; margin-bottom: 50px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1" data-name="Layer 1" viewBox="0 0 606.1 734.19">
+                        <defs>
+                        <style>
+                            .cls-1 {
+                                fill: #fff;
+                            }
 
-            <button type="button" class="btn" style="top: 60%;
-                    left: 61%; position: absolute;" onclick="scrollToDiv('egg');">
-                <strong>Get Started</strong>
-                <div id="container-stars">
-                    <div id="stars"></div>
+                            .cls-1, .cls-2 {
+                                stroke: #231f20;
+                                stroke-miterlimit: 10;
+                            }
+
+                            .cls-2 {
+                                fill: url(#linear-gradient);
+                            }
+                        </style>
+                        <linearGradient id="linear-gradient" x1="299.75" y1="412.07" x2="473.17" y2="412.07" gradientUnits="userSpaceOnUse">
+                        <stop offset="0" stop-color="#fff33b"/>
+                        <stop offset=".2" stop-color="#fdd92a"/>
+                        <stop offset=".42" stop-color="#fcc71e"/>
+                        <stop offset=".64" stop-color="#fbbb17"/>
+                        <stop offset=".88" stop-color="#fbb815"/>
+                        </linearGradient>
+                        </defs>
+                        <path class="cls-1" d="M174.67,207.36L9.36,643.68s134.31-215.35,251.03-185.67c0,0-90.64-10.01-118.09-76.43-15.76-38.13,11.09-103.44,32.37-174.22Z"/>
+                        <path class="cls-2" d="M465.73,192.59s-378.37,221.07,7.44,438.95c0,0-245.51-170.05-7.44-438.95Z"/>
+                        <path class="cls-1" d="M187.41,206.64s62.58,68.74,78.05,253.85l15.47,185.1V288.48s-2.13-94.59-93.53-81.84Z"/>
+                        </svg>
+                    </div>
                 </div>
 
-                <div id="glow">
-                    <div class="circle"></div>
-                    <div class="circle"></div>
+
+                <div class="right"><h1 style="margin-bottom:30px;" id="idkmannugget"><span id="typewriter"></span></h1>
+
+
+                    <button type="button" class="btn" onclick="scrollToDiv('egg');">
+                        <strong>Get Started</strong>
+                        <div id="container-stars">
+                            <div id="stars"></div>
+                        </div>
+
+                        <div id="glow">
+                            <div class="circle"></div>
+                            <div class="circle"></div>
+                        </div>
+                    </button>
+
                 </div>
-            </button>
 
+            </div>
 
-            <img id="logo" src="images" alt="logo" style="width: 250px; height: auto;">
 
             <script>
                 particlesJS.load('particles-js', 'particles.json', function () {
@@ -665,12 +845,12 @@
 
         <section id="egg" class="about">
             <div class ="main">
-                <img src="images/IMG_0356.png" alt="picture of me">
+                <img src="images/IMG_1035.jpg" alt="picture of me" style="width:350px; border-radius: 10px;">
                 <div class="about-text">
-                    <h1 style="font-weight:bold; font-size:80px; margin-bottom:20px; margin-top:50px;"> About me</h1>
-                    <h5 style="font-size:36px;margin-bottom:25px;">Designer <span> & Developer</span> </h5>
+                    <h1 style="font-weight:bold;  margin-bottom:20px; margin-top:50px;"> About me</h1>
+                    <h5 style="margin-bottom:25px;">Designer <span> & Developer</span> </h5>
                     <p style="line-height:30px;font-size:18px; margin-bottom: 45px;">
-                        Hi, my name is Aloysius Chew an I am a year 2 student at Republic Polytechnic studying Digital Design and Development and working towards being a developer. 
+                        Hi, my name is Aloysius Chew and I am a year 2 student at Republic Polytechnic studying Digital Design and Development and working towards being a developer. 
                         This website will feature some of my works in the projects tab
                     </p>
                 </div>
@@ -683,8 +863,8 @@
         <section id="pokemon" class="skills">
             <div class ="main">     
                 <div class="about-text">
-                    <h1 style="font-weight:bold; font-size:80px; margin-bottom:20px; margin-top:50px;">Skills</h1>
-                    <h5 style="font-size:36px;margin-bottom:45px;"><span>Skills</span> picked up over the years </h5>
+                    <h1 style="font-weight:bold; margin-bottom:20px; margin-top:50px;">Skills</h1>
+                    <h5 style="margin-bottom:45px;"><span>Skills</span> picked up over the years </h5>
 
 
                 </div>
@@ -749,25 +929,21 @@
         </section>
 
         <section id="versace-eros" class="projects">
-            <div class ="main">     
-                <div class="about-text">
-                    <h1 style="font-weight:bold; font-size:80px; margin-bottom:20px; margin-top:50px;">Featured Projects</h1>
-
-
+            <div class ="main3">     
+                <div class="projects-text" style="text-align:center;">
+                    <h1 style="font-weight:bold; margin-bottom:20px; margin-top:50px;">Featured Projects</h1>
+                    <h5 style="margin-bottom:45px; ">Here you will see some of my favourite <span>projects</span></h5>
 
                 </div>
-            </div>
-            <div>
-                <h5 style="font-size:36px;margin-bottom:45px; margin-left:300px;">Here you will see some of my favourite <span>projects</span></h5>
             </div>
 
             <div id="carouselProjects" class="carousel slide" data-ride="carousel" style="margin-bottom:88px;">
                 <div class="carousel-inner" style="padding:20px;">
                     <div class="carousel-item active">
-                        <div class="card" style="width: 960px; height:auto;margin-left: auto; margin-right: auto; padding:30px;">
+                        <div class="card" style="width: 69vw; height:auto;margin-left: auto; margin-right: auto; padding:30px;">
                             <div class="row">
                                 <div class="col">
-                                    <img src="images/cinephileMainPic.png" class="card-img" alt="project pic">
+                                    <img src="images/cinephileMainPic.png" class="card-img" alt="project pic" style="width:27vw; min-width: 250px;">
                                 </div>
                                 <div class="col">
                                     <div class="card-body">
@@ -788,32 +964,47 @@
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <div class="card" style="width: 960px; height:auto;margin-left: auto; margin-right: auto; padding:30px;">
+                        <div class="card" style="width: 69vw; height:auto;margin-left: auto; margin-right: auto; padding:30px;">
                             <div class="row">
                                 <div class="col">
-                                    <img src="images/cinephileMainPic.png" class="card-img" alt="project pic" style="width:500px; margin-left:20px;">
+                                    <img src="images/weatherappMainPic.png" class="card-img" alt="project pic" style="width:27vw; min-width: 250px;">
                                 </div>
                                 <div class="col">
                                     <div class="card-body">
-                                        <h4 class="card-title" style="text-align:left;">Clicky Clacky</h4>
-                                        <p class="card-text">Clicky Clacky</p>
-                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                        <h4 class="card-title" style="text-align:left;">Android Weather App</h4>
+                                        <p class="card-text">This is an Android app designed to fetch and display 2-hour weather forecast for different areas in Singapore using an API</p>
+                                        <p class="card-text"><small class="text-muted">Front-end & Back-end</small></p>
+                                        <div class="skillsForProjects" >
+                                            <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">HTML</p>
+                                            <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">CSS</p>
+                                            <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">PHP</p>
+                                            <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">MySQL</p>
+                                        </div>
+
+
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <div class="card" style="width: 960px; height:auto;margin-left: auto; margin-right: auto; padding:30px;">
+                        <div class="card" style="width: 69vw; height:auto;margin-left: auto; margin-right: auto; padding:30px;">
                             <div class="row">
                                 <div class="col">
-                                    <img src="images/cinephileMainPic.png" class="card-img" alt="project pic" style="width:500px; margin-left:20px; border: 1px solid white;">
+                                    <img src="images/railedMainPic.png" class="card-img" alt="project pic" style="width:27vw; min-width: 250px;">
                                 </div>
                                 <div class="col">
                                     <div class="card-body">
-                                        <h4 class="card-title" style="text-align:left;">CinephilePicks (CP.)</h4>
-                                        <p class="card-text">CinephilePicks (CP) is a dynamic movie review website. It is made using HTML,CSS and PHP and connects to a MySQL databse.</p>
-                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                        <h4 class="card-title" style="text-align:left;">Railed.</h4>
+                                        <p class="card-text">This is a prototype for "Railed" a website to sign up for skating lessons. Made using Adobe XD, Photoshop and Illustrator</p>
+                                        <p class="card-text"><small class="text-muted">Front-end & Back-end</small></p>
+                                        <div class="skillsForProjects" >
+                                            <p class="card-text" style="display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Adobe XD</p>
+                                            <p class="card-text" style="display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Photoshop</p>
+                                            <p class="card-text" style="display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Illustrator</p>
+                                        </div>
+
+
                                     </div>
                                 </div>
                             </div>
@@ -834,18 +1025,38 @@
 
 
         </section>
-        
-        <section id="egg" class="about">
+
+        <section id="egg5" class="contact">
             <div class ="main">
                 <div class="about-text">
-                    <h1 style="font-weight:bold; font-size:80px; margin-bottom:20px; margin-top:50px;"> Contact me</h1>
-                    <h5 style="font-size:36px;margin-bottom:25px;">Ask me  <span>anything</span> </h5>
-                    <p style="line-height:30px;font-size:18px; margin-bottom: 45px;">
-                        I will get back as soon as possible
-                    </p>
-                </div>
-                <img src="images/IMG_0356.png" alt="picture of me"> 
+                    <h1 style="font-weight:bold;">Contact me</h1>
+                    <h5 style="margin-bottom:20px;">I will get back to you <span>ASAP</span> </h5>
 
+                    <form action="" class="contact-form">
+                        <div class="input-row">
+                            <input type="text" placeholder="Your Name"  required>
+                            <input type="email" name="email" placeholder="Email"  required>
+                        </div>
+                        <input type="text" placeholder="Write a subject"  required>
+                        <textarea name="enquire" cols="10" rows="1" placeholder="Your Message" required style="width:100%;"></textarea>
+
+                        <button type="submit" class="btn" style="width:100%; margin-top:25px;">
+                            <strong>Submit</strong>
+                            <div id="container-stars">
+                                <div id="stars"></div>
+                            </div>
+
+                            <div id="glow">
+                                <div class="circle"></div>
+                                <div class="circle"></div>
+                            </div>
+                        </button>
+                    </form>
+
+
+
+                </div>
+                <img src="images/IMG_1031.jpg" alt="picture of me" style="width:350px; margin-top: 30px; border-radius: 10px;">   
 
 
             </div>
@@ -857,15 +1068,19 @@
 
 
 
-
-
-
-
         <script>
-            function scrollToDiv(targetId) {
-                var element = document.getElementById(targetId);
-                element.scrollIntoView();
-            }
+            document.addEventListener("DOMContentLoaded", function () {
+                // Smooth scrolling for anchor links
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+
+                        document.querySelector(this.getAttribute('href')).scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    });
+                });
+            });
         </script>
 
 
@@ -873,9 +1088,8 @@
             <div class="social">
                 <a href="mailto:22001095@myrp.edu.sg"><i class="fa fa-envelope"></i></a>
                 <a href="https://github.com/aloysiuschewzhiyong"><i class="fa-brands fa-github"></i></a>
-                <a href="#"><i class="fa-brands fa-discord"></i></a>
+                <a href="https://www.instagram.com/chikennuggetcurrysauce/"><i class="fa-brands fa-square-instagram"></i></a>
                 <a href="https://www.linkedin.com/in/aloysius-chew-880609244/"><i class="fa-brands fa-linkedin"></i></a>
-
             </div>
 
             <ul class="list">
@@ -898,21 +1112,6 @@
 
 
         </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     </body>
 
