@@ -27,6 +27,15 @@
                 box-sizing:border-box;
                 transition: all 0.3s;
             }
+            
+            h1{
+                font-weight:bold; margin-bottom:20px;   font-size: 5rem;
+            }
+            
+            h5{
+                font-size:1.625rem; margin-bottom:25px;
+            }
+            
 
 
             #particles-js {
@@ -41,7 +50,7 @@
                 display:flex;
                 background-color: #000000;
                 font-family: 'Poppins';
-                font-size: 18px;
+                font-size: 1.1rem;
                 color:white;
                 transition: 0.3s;
                 flex-direction: column;
@@ -64,7 +73,7 @@
             }
 
             #typewriter {
-                font-size: 50px;
+                font-size: 3rem;
                 font-weight: bolder;
                 color:white;
             }
@@ -87,24 +96,9 @@
                 flex:1;
             }
 
-            .left{
+            .left , .right{
                 width: 620px;
             }
-
-            .right{
-                width: 620px;
-            }
-
-
-
-
-
-            #idkmannugget{
-                font-size: 35px;
-            }
-
-
-
 
 
             .btn {
@@ -331,7 +325,7 @@
             .skills{
                 width:100%;
                 height: calc(100vh);
-                padding:78px 0px;   
+                padding:78px;   
             }
 
             .about img{
@@ -339,10 +333,6 @@
                 width: 200px;
                 float: left; /* Float the image to the left */
                 margin-right: 20px;
-            }
-
-            .about-text{
-                width:550px;
             }
 
 
@@ -357,26 +347,23 @@
 
             }
 
-            .main2{
-
-                max-width:95%;
-                margin: 0 auto;
-                display:flex;
-                align-items:center;
-                justify-content:space-around;
-
+            .about-text {
+                width: 80vw;
+                margin: 78px;
             }
 
-            .main3{
-                max-width:95%;
-                margin: 0 auto;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-
+            @media (max-width: 768px) {
+                .about-text {
+                    margin: 0;
+                    margin-top: 5vw;
+                }
             }
 
-            .projects-text{
+
+
+
+
+            .projects-text , .skills-text{
                 width:100vw;
                 justify-text: center;
             }
@@ -453,12 +440,13 @@
             }
 
             .card-img{
-                width:500px; margin-left:20px;
+                width:27vw; margin-left:20px; min-width: 200px;
             }
+            
 
 
             .footer{
-                width:auto;
+                width:100vw;
                 margin-top:100px;
                 padding:40px 0;
                 background-color: #fff;
@@ -592,23 +580,14 @@
 
             }
 
-            h1{
-                font-size: 80px;
-            }
-
-            h5{
-                font-size:26px;
-            }
-
-
 
             @media (max-width: 768px) {
                 body {
-                    font-size: 16px;
+                    font-size: 1rem;
                 }
 
                 #typewriter {
-                    font-size: 30px;
+                    font-size: 2rem;
                 }
 
                 .btn {
@@ -619,19 +598,12 @@
                     margin-bottom: 100px;
                 }
 
-                .about{
-                    flex-direction: column;
-                }
-                .main{
-                    flex-direction:column;
-                }
-
-                .containerHome{
+                .about , .main , .containerHome{
                     flex-direction: column;
                 }
 
                 h1{
-                    font-size: 50px;
+                    font-size: 3rem;
                 }
 
                 .main{  
@@ -640,8 +612,11 @@
                     margin: 0 auto;
                     display:flex;
                     align-items:center;
-                    justify-content:space-around;
 
+                }
+                
+                .left , .right{
+                    width:100vw;
                 }
             }
 
@@ -761,19 +736,19 @@
                 <div class="right"><h1 style="margin-bottom:30px;" id="idkmannugget"><span id="typewriter"></span></h1>
 
 
-    <a href="index.html#egg" class="btn-link">
-                    <button type="button" class="btn"">
-                        <strong>Get Started</strong>
-                        <div id="container-stars">
-                            <div id="stars"></div>
-                        </div>
+                    <a href="index.html#egg" class="btn-link">
+                        <button type="button" class="btn"">
+                            <strong>Get Started</strong>
+                            <div id="container-stars">
+                                <div id="stars"></div>
+                            </div>
 
-                        <div id="glow">
-                            <div class="circle"></div>
-                            <div class="circle"></div>
-                        </div>
-                    </button>
-    </a>
+                            <div id="glow">
+                                <div class="circle"></div>
+                                <div class="circle"></div>
+                            </div>
+                        </button>
+                    </a>
                 </div>
 
             </div>
@@ -849,9 +824,9 @@
             <div class ="main">
                 <img src="images/IMG_1035.JPG" alt="picture of me" style="width:350px; border-radius: 10px;">
                 <div class="about-text">
-                    <h1 style="font-weight:bold;  margin-bottom:20px; margin-top:50px;"> About me</h1>
-                    <h5 style="margin-bottom:25px;">Designer <span> & Developer</span> </h5>
-                    <p style="line-height:30px;font-size:18px; margin-bottom: 45px;">
+                    <h1> About me</h1>
+                    <h5>Designer <span> & Developer</span> </h5>
+                    <p>
                         Hi, my name is Aloysius Chew and I am a year 2 student at Republic Polytechnic studying Digital Design and Development and working towards being a developer. 
                         This website will feature some of my works in the projects tab
                     </p>
@@ -864,9 +839,9 @@
 
         <section id="pokemon" class="skills">
             <div class ="main">     
-                <div class="about-text">
-                    <h1 style="font-weight:bold; margin-bottom:20px; margin-top:50px;">Skills</h1>
-                    <h5 style="margin-bottom:45px;"><span>Skills</span> picked up over the years </h5>
+                <div class="skill-text">
+                    <h1>Skills</h1>
+                    <h5><span>Skills</span> picked up over the years </h5>
 
 
                 </div>
@@ -933,8 +908,8 @@
         <section id="versace-eros" class="projects">
             <div class ="main3">     
                 <div class="projects-text" style="text-align:center;">
-                    <h1 style="font-weight:bold; margin-bottom:20px; margin-top:50px;">Featured Projects</h1>
-                    <h5 style="margin-bottom:45px; ">Here you will see some of my favourite <span>projects</span></h5>
+                    <h1>Featured Projects</h1>
+                    <h5>Here you will see some of my favourite <span>projects</span></h5>
 
                 </div>
             </div>
@@ -945,7 +920,7 @@
                         <div class="card" style="width: 69vw; height:auto;margin-left: auto; margin-right: auto; padding:30px;">
                             <div class="row">
                                 <div class="col">
-                                    <img src="images/cinephileMainPic.png" class="card-img" alt="project pic" style="width:27vw; min-width: 250px;">
+                                    <img src="images/cinephileMainPic.png" class="card-img" alt="project pic">
                                 </div>
                                 <div class="col">
                                     <div class="card-body">
@@ -969,7 +944,7 @@
                         <div class="card" style="width: 69vw; height:auto;margin-left: auto; margin-right: auto; padding:30px;">
                             <div class="row">
                                 <div class="col">
-                                    <img src="images/weatherappMainPic.png" class="card-img" alt="project pic" style="width:27vw; min-width: 250px;">
+                                    <img src="images/weatherappMainPic.png" class="card-img" alt="project pic">
                                 </div>
                                 <div class="col">
                                     <div class="card-body">
@@ -991,7 +966,7 @@
                         <div class="card" style="width: 69vw; height:auto;margin-left: auto; margin-right: auto; padding:30px;">
                             <div class="row">
                                 <div class="col">
-                                    <img src="images/railedMainPic.png" class="card-img" alt="project pic" style="width:27vw; min-width: 250px;">
+                                    <img src="images/railedMainPic.png" class="card-img" alt="project pic">
                                 </div>
                                 <div class="col">
                                     <div class="card-body">
@@ -1029,8 +1004,8 @@
         <section id="egg5" class="contact">
             <div class ="main">
                 <div class="about-text">
-                    <h1 style="font-weight:bold;">Contact me</h1>
-                    <h5 style="margin-bottom:20px;">I will get back to you <span>ASAP</span> </h5>
+                    <h1>Contact me</h1>
+                    <h5>I will get back to you <span>ASAP</span> </h5>
 
                     <form action="" class="contact-form">
                         <div class="input-row">
