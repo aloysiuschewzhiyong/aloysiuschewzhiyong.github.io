@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script defer src="app2.js"></script>
 
 
 
@@ -73,7 +74,7 @@
             }
 
             #typewriter {
-                font-size: 2.5rem;
+                font-size: 3rem;
                 font-weight: bolder;
                 color:white;
             }
@@ -96,10 +97,8 @@
                 flex:1;
             }
 
-            .left , .right{
-                width: 620px;
-            }
-
+      
+            
 
             .btn {
                 display: flex;
@@ -589,7 +588,7 @@
                 #typewriter{
                     font-size: 2rem;
                 }
-                
+
                 #cursor{
                     font-size:1rem;
                 }
@@ -634,31 +633,38 @@
                 transition: all 0.5s;
             }
 
+
+            #cursor {
+                font-size: 2.75rem;
+                animation: blink 0.5s infinite;
+                  background: linear-gradient(180deg, #ffdb3b 10%, #ff9b17d7 45%, #f9ff41 67%, #feb200d7 87%);
+  -webkit-background-clip: text;
+  color: transparent;
+            }
+
+            @keyframes blink {
+                50% {
+                    opacity: 0; /* Make the cursor disappear during half of the animation */
+                }
+            }
+
+            @media (prefers-reduced-motion: no-preference) {
+  .hidden {
+    transition: all 1s;
+  }
+
             .hidden{
                 opacity:0;
-                transition: opacity 0.5s ease-in-out;
+                filter:blur(2px);
+                transform:translateY(+50%);
+                transition: all 1s;
             }
 
             .show{
                 opacity: 1;
+                filter:blur(0);
+                transform:translateX(0);
             }
-            
-            
-#cursor {
-  font-size: 3rem;
-  background: linear-gradient(90deg, #ffd700, #ff8c00); /* Gradient from yellow to orange */
-  color: transparent; /* Hide the text content */
-  background-size: 200% 100%; /* Adjust the thickness of the cursor line */
-  animation: blink 1s infinite; /* Blinking animation */
-}
-
-@keyframes blink {
-  50% {
-    opacity: 0; /* Make the cursor disappear during half of the animation */
-  }
-}
-
-
 
 
 
@@ -692,21 +698,24 @@
                 });
             });
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
+            document.addEventListener('DOMContentLoaded', function () {
+                const observer = new IntersectionObserver((entries) => {
+                       entries.forEach((entry) => {
                     console.log(entry);
                     if (entry.isIntersecting) {
                         entry.target.classList.add('show');
                     } else {
                         entry.target.classList.remove('show');
                     }
+                 });
                 });
-            }, {threshold: 0.5});
 
-            const hiddenElements = document.querySelectorAll('.hidden');
-            hiddenElements.forEach((el) => observer.observe(el));
+                const hiddenElements = document.querySelectorAll('.hidden');
+                hiddenElements.forEach((el) => observer.observe(el));
+            });
 
 
+          
 
         </script>
 
@@ -747,10 +756,10 @@
         <div id="particles-js"></div>
 
 
-        <section id="spiderman" class="" style="height: calc(100vh);">
+        <section id="spiderman" style="height: calc(100vh);">
 
             <div class="containerHome">
-                <div class="left">
+                <div class="left hidden">
                     <div id="logo" style="width:300px; margin-bottom: 50px;">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1" data-name="Layer 1" viewBox="0 0 606.1 734.19">
                         <defs>
@@ -784,14 +793,14 @@
                 </div>
 
 
-                <div class="right">
-            
+                <div class="right hidden">
 
-              
-  <h1 style="margin-bottom:30px;" id="idkmannugget">
-    <span id="typewriter"></span>
-    <span id="cursor" class="typing-cursor">|</span>
-  </h1>
+
+
+                    <h1 style="margin-bottom:30px;" id="idkmannugget">
+                        <span id="typewriter"></span>
+                        <span id="cursor" class="typing-cursor">|</span>
+                    </h1>
 
                     <a href="index.html#egg" class="btn-link">
                         <button type="button" class="btn"">
@@ -820,57 +829,57 @@
 
             <script>
 
-              window.onload = function () {
-    var cursor = document.getElementById('cursor');
-    cursor.style.opacity = 1;
-    cursor.classList.add('typing-cursor'); // Use classList to add a class
-}
+                window.onload = function () {
+                    var cursor = document.getElementById('cursor');
+                    cursor.style.opacity = 1;
+                    cursor.classList.add('typing-cursor'); // Use classList to add a class
+                }
 
 // Typewriter effect JavaScript
-var speed = 39;
-var deletespeed = 20;
-var forward = true; // Flag to control typing direction
+                var speed = 39;
+                var deletespeed = 20;
+                var forward = true; // Flag to control typing direction
 
-function typeWriter() {
-    var i = 0;
-    var typewriterElement = document.getElementById("typewriter");
+                function typeWriter() {
+                    var i = 0;
+                    var typewriterElement = document.getElementById("typewriter");
 
-    var initialText = "Hi, my name is Aloysius";
-    var defaultText = "Welcome to my portfolio";
+                    var initialText = "Hi, my name is Aloysius";
+                    var defaultText = "Welcome to my portfolio";
 
-    var currentText = initialText; // Start with the initial text
+                    var currentText = initialText; // Start with the initial text
 
-    function type() {
-        if (i < currentText.length && forward) {
-            typewriterElement.textContent += currentText.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        } else {
-            forward = false; // Change direction to rewinding
-            setTimeout(rewind, 2000); // Wait for 2 seconds, then rewind
-        }
-    }
+                    function type() {
+                        if (i < currentText.length && forward) {
+                            typewriterElement.textContent += currentText.charAt(i);
+                            i++;
+                            setTimeout(type, speed);
+                        } else {
+                            forward = false; // Change direction to rewinding
+                            setTimeout(rewind, 2000); // Wait for 2 seconds, then rewind
+                        }
+                    }
 
-    function rewind() {
-        if (i >= 0 && !forward) {
-            typewriterElement.textContent = currentText.substring(0, i);
-            i--;
-            setTimeout(rewind, deletespeed);
-        } else {
-            forward = true; // Change direction to typing
-            i = 0; // Reset the position
+                    function rewind() {
+                        if (i >= 0 && !forward) {
+                            typewriterElement.textContent = currentText.substring(0, i);
+                            i--;
+                            setTimeout(rewind, deletespeed);
+                        } else {
+                            forward = true; // Change direction to typing
+                            i = 0; // Reset the position
 
-            // Switch between initial and default text
-            currentText = currentText === initialText ? defaultText : initialText;
-            setTimeout(type, 0); // Start typing again
-        }
-    }
+                            // Switch between initial and default text
+                            currentText = currentText === initialText ? defaultText : initialText;
+                            setTimeout(type, 0); // Start typing again
+                        }
+                    }
 
-    type();
-}
+                    type();
+                }
 
 // Start the typewriter effect after the window has loaded
-window.onload = typeWriter;
+                window.onload = typeWriter;
 
             </script>
 
@@ -881,8 +890,8 @@ window.onload = typeWriter;
 
         <section id="egg" class="about">
             <div class ="main">
-                <img src="images/IMG_1035.JPG" alt="picture of me" style="width:350px; border-radius: 10px;">
-                <div class="about-text">
+                <img class="hidden" src="images/IMG_1035.JPG" alt="picture of me" style="width:350px; border-radius: 10px;">
+                <div class="about-text hidden">
                     <h1>About me</h1>
                     <h5>Designer <span> & Developer</span> </h5>
                     <p>
@@ -897,7 +906,7 @@ window.onload = typeWriter;
         </section>
 
         <section id="pokemon" class="skills">
-            <div class ="main">     
+            <div class ="main hidden">     
                 <div class="skill-text">
                     <h1>Skills</h1>
                     <h5><span>Skills</span> picked up over the years </h5>
@@ -907,7 +916,7 @@ window.onload = typeWriter;
             </div>
 
 
-            <div class="container-idk">
+            <div class="container-idk hidden">
 
                 <div class="card" >
 
@@ -965,7 +974,7 @@ window.onload = typeWriter;
         </section>
 
         <section id="versace-eros" class="projects">
-            <div class ="main3">     
+            <div class ="main3 hidden">     
                 <div class="projects-text" style="text-align:center;">
                     <h1>Featured Projects</h1>
                     <h5>Here you will see some of my favourite <span>projects</span></h5>
@@ -973,7 +982,7 @@ window.onload = typeWriter;
                 </div>
             </div>
 
-            <div id="carouselProjects" class="carousel slide" data-ride="carousel" >
+            <div id="carouselProjects" class="carousel slide hidden" data-ride="carousel" >
                 <div class="carousel-inner" style="padding:30px;">
                     <div class="carousel-item active">
                         <div class="card" style="width: 69vw; height:auto;margin-left: auto; margin-right: auto; padding:30px;">
@@ -1064,7 +1073,7 @@ window.onload = typeWriter;
 
         <section id="egg5" class="contact">
             <div class ="main">
-                <div class="about-text">
+                <div class="about-text hidden">
                     <h1>Contact me</h1>
                     <h5>I will get back to you <span>ASAP</span> </h5>
 
@@ -1092,7 +1101,7 @@ window.onload = typeWriter;
 
 
                 </div>
-                <img src="images/IMG_1031.JPG" alt="picture of me" style="width:350px; margin-top: 30px; border-radius: 10px;">   
+                <img class="hidden" src="images/IMG_1031.JPG" alt="picture of me" style="width:350px; margin-top: 30px; border-radius: 10px;">   
 
 
             </div>
