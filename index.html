@@ -25,17 +25,16 @@
                 padding:0;
                 margin:0;
                 box-sizing:border-box;
-                transition: all 0.3s;
             }
-            
+
             h1{
                 font-weight:bold; margin-bottom:20px;   font-size: 5rem;
             }
-            
+
             h5{
                 font-size:1.625rem; margin-bottom:25px;
             }
-            
+
 
 
             #particles-js {
@@ -47,6 +46,7 @@
 
 
             body {
+                padding:0px;
                 display:flex;
                 background-color: #000000;
                 font-family: 'Poppins';
@@ -73,7 +73,7 @@
             }
 
             #typewriter {
-                font-size: 3rem;
+                font-size: 2.5rem;
                 font-weight: bolder;
                 color:white;
             }
@@ -440,9 +440,9 @@
             }
 
             .card-img{
-                width:27vw; margin-left:20px; min-width: 200px;
+                width:35vw; margin-left:20px; min-width: 200px; align-self: center;
             }
-            
+
 
 
             .footer{
@@ -586,8 +586,12 @@
                     font-size: 1rem;
                 }
 
-                #typewriter {
+                #typewriter{
                     font-size: 2rem;
+                }
+                
+                #cursor{
+                    font-size:1rem;
                 }
 
                 .btn {
@@ -614,9 +618,14 @@
                     align-items:center;
 
                 }
-                
+
                 .left , .right{
                     width:100vw;
+                }
+
+                .card{
+                    display: flex;
+                    flex-direction:column;
                 }
             }
 
@@ -624,6 +633,32 @@
                 transform: rotate(360deg);
                 transition: all 0.5s;
             }
+
+            .hidden{
+                opacity:0;
+                transition: opacity 0.5s ease-in-out;
+            }
+
+            .show{
+                opacity: 1;
+            }
+            
+            
+#cursor {
+  font-size: 3rem;
+  background: linear-gradient(90deg, #ffd700, #ff8c00); /* Gradient from yellow to orange */
+  color: transparent; /* Hide the text content */
+  background-size: 200% 100%; /* Adjust the thickness of the cursor line */
+  animation: blink 1s infinite; /* Blinking animation */
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0; /* Make the cursor disappear during half of the animation */
+  }
+}
+
+
 
 
 
@@ -657,6 +692,22 @@
                 });
             });
 
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    console.log(entry);
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                    } else {
+                        entry.target.classList.remove('show');
+                    }
+                });
+            }, {threshold: 0.5});
+
+            const hiddenElements = document.querySelectorAll('.hidden');
+            hiddenElements.forEach((el) => observer.observe(el));
+
+
+
         </script>
 
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navbar">
@@ -667,7 +718,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
+                            <a class="nav-link" href="index.html#">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="index.html#egg">About Me</a>
@@ -696,7 +747,7 @@
         <div id="particles-js"></div>
 
 
-        <section id="spiderman" style="height: calc(100vh);">
+        <section id="spiderman" class="" style="height: calc(100vh);">
 
             <div class="containerHome">
                 <div class="left">
@@ -733,8 +784,14 @@
                 </div>
 
 
-                <div class="right"><h1 style="margin-bottom:30px;" id="idkmannugget"><span id="typewriter"></span></h1>
+                <div class="right">
+            
 
+              
+  <h1 style="margin-bottom:30px;" id="idkmannugget">
+    <span id="typewriter"></span>
+    <span id="cursor" class="typing-cursor">|</span>
+  </h1>
 
                     <a href="index.html#egg" class="btn-link">
                         <button type="button" class="btn"">
@@ -763,56 +820,58 @@
 
             <script>
 
-                window.onload = function () {
-                    var cursor = document.getElementById('cursor');
-                    cursor.style.opacity = 1;
-                    cursor.className += ' typing-cursor';
-                }
-                // Typewriter effect JavaScript
-                var speed = 39;
-                var deletespeed = 20;
-                var forward = true; // Flag to control typing direction
+              window.onload = function () {
+    var cursor = document.getElementById('cursor');
+    cursor.style.opacity = 1;
+    cursor.classList.add('typing-cursor'); // Use classList to add a class
+}
 
-                function typeWriter() {
-                    var i = 0;
-                    var typewriterElement = document.getElementById("typewriter");
+// Typewriter effect JavaScript
+var speed = 39;
+var deletespeed = 20;
+var forward = true; // Flag to control typing direction
 
-                    var initialText = "Hi, my name is Aloysius";
-                    var defaultText = "Welcome to my portfolio";
+function typeWriter() {
+    var i = 0;
+    var typewriterElement = document.getElementById("typewriter");
 
-                    var currentText = initialText; // Start with the initial text
+    var initialText = "Hi, my name is Aloysius";
+    var defaultText = "Welcome to my portfolio";
 
-                    function type() {
-                        if (i < currentText.length && forward) {
-                            typewriterElement.textContent += currentText.charAt(i);
-                            i++;
-                            setTimeout(type, speed);
-                        } else {
-                            forward = false; // Change direction to rewinding
-                            setTimeout(rewind, 2000); // Wait for 2 seconds, then rewind
-                        }
-                    }
+    var currentText = initialText; // Start with the initial text
 
-                    function rewind() {
-                        if (i >= 0 && !forward) {
-                            typewriterElement.textContent = currentText.substring(0, i);
-                            i--;
-                            setTimeout(rewind, deletespeed);
-                        } else {
-                            forward = true; // Change direction to typing
-                            i = 0; // Reset the position
+    function type() {
+        if (i < currentText.length && forward) {
+            typewriterElement.textContent += currentText.charAt(i);
+            i++;
+            setTimeout(type, speed);
+        } else {
+            forward = false; // Change direction to rewinding
+            setTimeout(rewind, 2000); // Wait for 2 seconds, then rewind
+        }
+    }
 
-                            // Switch between initial and default text
-                            currentText = currentText === initialText ? defaultText : initialText;
-                            setTimeout(type, 0); // Start typing again
-                        }
-                    }
+    function rewind() {
+        if (i >= 0 && !forward) {
+            typewriterElement.textContent = currentText.substring(0, i);
+            i--;
+            setTimeout(rewind, deletespeed);
+        } else {
+            forward = true; // Change direction to typing
+            i = 0; // Reset the position
 
-                    type();
-                }
+            // Switch between initial and default text
+            currentText = currentText === initialText ? defaultText : initialText;
+            setTimeout(type, 0); // Start typing again
+        }
+    }
 
-                // Start the typewriter effect
-                typeWriter();
+    type();
+}
+
+// Start the typewriter effect after the window has loaded
+window.onload = typeWriter;
+
             </script>
 
 
@@ -824,7 +883,7 @@
             <div class ="main">
                 <img src="images/IMG_1035.JPG" alt="picture of me" style="width:350px; border-radius: 10px;">
                 <div class="about-text">
-                    <h1> About me</h1>
+                    <h1>About me</h1>
                     <h5>Designer <span> & Developer</span> </h5>
                     <p>
                         Hi, my name is Aloysius Chew and I am a year 2 student at Republic Polytechnic studying Digital Design and Development and working towards being a developer. 
@@ -914,8 +973,8 @@
                 </div>
             </div>
 
-            <div id="carouselProjects" class="carousel slide" data-ride="carousel" style="margin-bottom:88px;">
-                <div class="carousel-inner" style="padding:20px;">
+            <div id="carouselProjects" class="carousel slide" data-ride="carousel" >
+                <div class="carousel-inner" style="padding:30px;">
                     <div class="carousel-item active">
                         <div class="card" style="width: 69vw; height:auto;margin-left: auto; margin-right: auto; padding:30px;">
                             <div class="row">
@@ -963,27 +1022,29 @@
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <div class="card" style="width: 69vw; height:auto;margin-left: auto; margin-right: auto; padding:30px;">
-                            <div class="row">
-                                <div class="col">
-                                    <img src="images/railedMainPic.png" class="card-img" alt="project pic">
-                                </div>
-                                <div class="col">
-                                    <div class="card-body">
-                                        <h4 class="card-title" style="text-align:left;">Railed.</h4>
-                                        <p class="card-text">This is a prototype for "Railed" a website to sign up for skating lessons. Made using Adobe XD, Photoshop and Illustrator</p>
-                                        <p class="card-text"><small class="text-muted">Front-end & Back-end</small></p>
-                                        <div class="skillsForProjects" >
-                                            <p class="card-text" style="display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Adobe XD</p>
-                                            <p class="card-text" style="display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Photoshop</p>
-                                            <p class="card-text" style="display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Illustrator</p>
+                        <a href="your_destination_page.html" style="text-decoration: none; color: inherit; cursor: pointer;">>
+                            <div class="card" style="width: 69vw; height:auto;margin-left: auto; margin-right: auto; padding:30px;">
+                                <div class="row">
+                                    <div class="col">
+                                        <img src="images/railedMainPic.png" class="card-img" alt="project pic">
+                                    </div>
+                                    <div class="col">
+                                        <div class="card-body">
+                                            <h4 class="card-title" style="text-align:left;">Railed.</h4>
+                                            <p class="card-text">This is a prototype for "Railed" a website to sign up for skating lessons. Made using Adobe XD, Photoshop and Illustrator</p>
+                                            <p class="card-text"><small class="text-muted">Front-end & Back-end</small></p>
+                                            <div class="skillsForProjects" >
+                                                <p class="card-text" style="display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Adobe XD</p>
+                                                <p class="card-text" style="display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Photoshop</p>
+                                                <p class="card-text" style="display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Illustrator</p>
+                                            </div>
+
+
                                         </div>
-
-
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselProjects" role="button" data-slide="prev">
