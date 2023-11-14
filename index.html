@@ -26,6 +26,7 @@
                 padding:0;
                 margin:0;
                 box-sizing:border-box;
+                   cursor: none; 
             }
 
             h1{
@@ -97,7 +98,7 @@
                 margin: 0;
                 flex:1;
             }
-            
+
             .left {
                 display: flex;
                 flex-direction: column;
@@ -107,8 +108,8 @@
                 flex:1;
             }
 
-      
-            
+
+
 
             .btn {
                 display: flex;
@@ -278,34 +279,34 @@
                     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
                 }
             }
-            
+
             /* Add styles for touch events */
-.btn:active {
-    transform: scale(1.1);
-}
+            .btn:active {
+                transform: scale(1.1);
+            }
 
-.btn:active .circle {
-    background: #FE53BB;
-}
+            .btn:active .circle {
+                background: #FE53BB;
+            }
 
-/* Media query for smaller screens (adjust the max-width as needed) */
-@media only screen and (max-width: 600px) {
-    .btn:hover #container-stars {
-        z-index: 1;
-        background-color: #000000;
-    }
+            /* Media query for smaller screens (adjust the max-width as needed) */
+            @media only screen and (max-width: 600px) {
+                .btn:hover #container-stars {
+                    z-index: 1;
+                    background-color: #000000;
+                }
 
-    .btn:hover {
-        transform: scale(1); /* Adjust as needed for mobile */
-    }
+                .btn:hover {
+                    transform: scale(1); /* Adjust as needed for mobile */
+                }
 
-    .btn:active {
-        border: double 4px #FE53BB;
-        background-origin: border-box;
-        background-clip: content-box, border-box;
-        animation: none;
-    }
-}
+                .btn:active {
+                    border: double 4px #FE53BB;
+                    background-origin: border-box;
+                    background-clip: content-box, border-box;
+                    animation: none;
+                }
+            }
 
 
 
@@ -402,8 +403,7 @@
 
 
             .projects-text , .skills-text{
-                width:100vw;
-                justify-text: center;
+                justify-content: center;
             }
 
 
@@ -444,7 +444,6 @@
 
 
             .card-title{
-                font-size:24px;
                 text-align: center;
                 margin-bottom: 20px;
                 font-weight: bold;
@@ -478,7 +477,7 @@
             }
 
             .card-img{
-                width:35vw; margin-left:20px; min-width: 200px; align-self: center;
+                width:30vw; margin-left:20px; min-width: 200px; align-self: center;
             }
 
 
@@ -619,62 +618,6 @@
             }
 
 
-            @media (max-width: 768px) {
-                body {
-                    font-size: 1rem;
-                }
-
-                #typewriter{
-                    font-size: 2rem;
-                }
-
-                #cursor{
-                    font-size:1rem;
-                }
-
-                .btn {
-                    top: 50%;
-                    left: 50%;
-                }
-                pokemon{
-                    margin-bottom: 100px;
-                }
-
-                .about , .main , .containerHome{
-                    flex-direction: column;
-                }
-
-                h1{
-                    font-size: 3rem;
-                }
-
-                .main{  
-                    width:69vw;
-                    max-width:95%;
-                    margin: 0 auto;
-                    display:flex;
-                    align-items:center;
-
-                }
-
-    
-                .card{
-                    display: flex;
-                    flex-direction:column;
-                }
-                
-                .left , .right {
-                width:100vw;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                margin: 0;
-                flex:1;
-            }
-            }
-
             #logo:hover{
                 transform: rotate(360deg);
                 transition: all 0.5s;
@@ -684,9 +627,9 @@
             #cursor {
                 font-size: 2.75rem;
                 animation: blink 0.5s infinite;
-                  background: linear-gradient(180deg, #ffdb3b 10%, #ff9b17d7 45%, #f9ff41 67%, #feb200d7 87%);
-  -webkit-background-clip: text;
-  color: transparent;
+                background: linear-gradient(180deg, #ffdb3b 10%, #ff9b17d7 45%, #f9ff41 67%, #feb200d7 87%);
+                -webkit-background-clip: text;
+                color: transparent;
             }
 
             @keyframes blink {
@@ -696,402 +639,567 @@
             }
 
             @media (prefers-reduced-motion: no-preference) {
-  .hidden {
-    transition: all 1s;
-  }
+                .hidden {
+                    transition: all 1s;
+                }
 
-            .hidden{
-                opacity:0;
-                filter:blur(2px);
-                transform:translateY(+50%);
-                transition: all 1s;
-            }
+                .hidden{
+                    opacity:0;
+                    filter:blur(2px);
+                    transform:translateY(+50%);
+                    transition: all 1s;
+                }
 
-            .show{
-                opacity: 1;
-                filter:blur(0);
-                transform:translateX(0);
-            }
+                .hiddenLeft{
+                    opacity:0;
+                    filter:blur(2px);
+                    transform:translateX(-50%);
+                    transition: all 1s;
+                }
+
+                .hiddenRight{
+                    opacity:0;
+                    filter:blur(2px);
+                    transform:translateX(+50%);
+                    transition: all 1s;
+                }
+
+                .show {
+                    opacity: 1;
+                    filter: blur(0);
+                    transform: translateX(0) translateY(0);
+                }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-        </style>
-    </head>
-
-    <body>
-
-        <script>
-            $(document).ready(function () {
-                // Change the navbar background and text color when scrolling
-                $(window).scroll(function () {
-                    if ($(window).scrollTop() > 50) {
-                        $('#navbar').removeClass('transparent').addClass('scrolled');
-                    } else {
-                        $('#navbar').removeClass('scrolled').addClass('transparent');
+                @media (max-width: 768px) {
+                    body {
+                        font-size: 1rem;
                     }
-                });
-            });
 
-            document.addEventListener('DOMContentLoaded', function () {
-                const observer = new IntersectionObserver((entries) => {
-                       entries.forEach((entry) => {
-                    console.log(entry);
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('show');
-                    } else {
-                        entry.target.classList.remove('show');
+                    #typewriter{
+                        font-size: 2rem;
                     }
-                 });
+
+                    #cursor{
+                        font-size:2rem;
+                    }
+
+                    .btn {
+                        top: 50%;
+                        left: 50%;
+                    }
+                    pokemon{
+                        margin-bottom: 100px;
+                    }
+
+                    .about , .main , .containerHome{
+                        flex-direction: column;
+                    }
+
+                    h1{
+                        font-size: 3rem;
+                    }
+
+                    .main{  
+                        width:69vw;
+                        max-width:95%;
+                        margin: 0 auto;
+                        display:flex;
+                        align-items:center;
+
+                    }
+
+
+                    .card{
+                        display: flex;
+                        flex-direction:column;
+                    }
+
+                    .left , .right {
+                        width:100vw;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100vh;
+                        margin: 0;
+                        flex:1;
+                    }
+
+                    .main{
+                        width:80vw;
+
+                    }
+
+                    .projects-text , .skills-text{
+                        width:100vw;
+                        justify-content: flex-start;
+                    }
+
+                    .hidden, .hiddenLeft, .hiddenRight{
+                        transform: translateX(0) translateY(+50%);
+                    }
+
+                    .show {
+                        opacity: 1;
+                        filter: blur(0);
+                        transform: translateX(0) translateY(0);
+                    }
+
+
+
+
+                }
+.circleCursor {
+  height: 24px;
+  width: 24px;
+  border-radius: 24px;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transition: transform 0.3s ease; /* Add transition for the transform property */
+  z-index: 99996969;
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+            </style>
+        </head>
+
+        <body>
+
+            <script>
+                $(document).ready(function () {
+                    // Change the navbar background and text color when scrolling
+                    $(window).scroll(function () {
+                        if ($(window).scrollTop() > 50) {
+                            $('#navbar').removeClass('transparent').addClass('scrolled');
+                        } else {
+                            $('#navbar').removeClass('scrolled').addClass('transparent');
+                        }
+                    });
                 });
 
-                const hiddenElements = document.querySelectorAll('.hidden');
-                hiddenElements.forEach((el) => observer.observe(el));
-            });
+                document.addEventListener('DOMContentLoaded', function () {
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach((entry) => {
+                            console.log(entry);
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('show');
+                            } else {
+                                entry.target.classList.remove('show');
+                            }
+                        });
+                    });
+
+                    const hiddenElements = document.querySelectorAll('.hidden');
+                    hiddenElements.forEach((el) => observer.observe(el));
+                });
+
+
+                document.addEventListener('DOMContentLoaded', function () {
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach((entry) => {
+                            console.log(entry);
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('show');
+                            } else {
+                                entry.target.classList.remove('show');
+                            }
+                        });
+                    });
+
+                    const hiddenElements = document.querySelectorAll('.hiddenLeft');
+                    hiddenElements.forEach((el) => observer.observe(el));
+                });
+
+                document.addEventListener('DOMContentLoaded', function () {
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach((entry) => {
+                            console.log(entry);
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('show');
+                            } else {
+                                entry.target.classList.remove('show');
+                            }
+                        });
+                    });
+
+                    const hiddenElements = document.querySelectorAll('.hiddenRight');
+                    hiddenElements.forEach((el) => observer.observe(el));
+          });
+          
+          document.addEventListener('DOMContentLoaded', function() {
+   
+  
+const coords = { x: 0, y: 0 };
+const circles = document.querySelectorAll(".circleCursor");
+
+const colors = [
+  "#ffff00",
+  "#fef600",
+  "#fdee00",
+  "#fbe500",
+  "#f9dd00",
+  "#f7d400",
+  "#f4cc00",
+  "#f1c400",
+"#eebc00",
+"#eab402",
+"#e7ac07",
+"#e3a40b",
+"#de9c0f",
+"#d99512",
+"#d58e15",
+"#cf8617",
+"#ca7f19",
+"#c4781b",
+"#bf711c",
+"#b96b1d",
+"#b2641e",
+"#ac5e1f"
+
+];
+
+circles.forEach(function (circle, index) {
+  circle.x = 0;
+  circle.y = 0;
+  circle.style.backgroundColor = colors[index % colors.length];
+});
+
+window.addEventListener("mousemove", function(e){
+  coords.x = e.clientX;
+  coords.y = e.clientY;
+  
+});
+
+function animateCircles() {
+  
+  let x = coords.x;
+  let y = coords.y;
+  
+  circles.forEach(function (circle, index) {
+    circle.style.left = x - 12 + "px";
+    circle.style.top = y - 12 + "px";
+    
+    circle.style.scale = (circles.length - index) / circles.length;
+    
+    circle.x = x;
+    circle.y = y;
+
+    const nextCircle = circles[index + 1] || circles[0];
+    x += (nextCircle.x - x) * 0.3;
+    y += (nextCircle.y - y) * 0.3;
+  });
+ 
+  requestAnimationFrame(animateCircles);
+}
+
+animateCircles();
+
+
+});
+
+  </script>
+                
+              
 
 
           
 
-        </script>
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navbar">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html#egg">About Me</a>
+                            </li>
+                            <li class="nav-item dropdown"> <!-- Add "dropdown" class here -->
+                                <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Projects
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
+                                    <li>
+                                        <a class="dropdown-item" href="index.html#versace-eros">Featured Projects</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="projects.html#pokemon">All Projects</a>
+                                    </li>
 
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navbar">
-            <div class="container">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html#egg">About Me</a>
-                        </li>
-                        <li class="nav-item dropdown"> <!-- Add "dropdown" class here -->
-                            <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Projects
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
-                                <li>
-                                    <a class="dropdown-item" href="index.html#versace-eros">Featured Projects</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="projects.html#pokemon">All Projects</a>
-                                </li>
-
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html#egg5">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <div id="particles-js"></div>
-
-
-        <section id="spiderman" style="height: calc(100vh);">
-
-            <div class="containerHome">
-                <div class="left hidden">
-                    <div id="logo" style="width:300px; margin-bottom: 50px;">
-                       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1" data-name="Layer 1" viewBox="0 0 629.09 756.83">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: #fff;
-      }
-
-      .cls-1, .cls-2 {
-        stroke: #231f20;
-        stroke-miterlimit: 10;
-      }
-
-      .cls-2 {
-        fill: url(#linear-gradient);
-      }
-    </style>
-    <linearGradient id="linear-gradient" x1="321.44" y1="411.41" x2="507.4" y2="411.41" gradientUnits="userSpaceOnUse">
-      <stop offset=".05" stop-color="#fff200"/>
-      <stop offset=".28" stop-color="#fcd808"/>
-      <stop offset=".76" stop-color="#f8a717"/>
-      <stop offset="1" stop-color="#f7941d"/>
-    </linearGradient>
-  </defs>
-  <path class="cls-1" d="M187.31,191.89L10.03,659.77s144.02-230.93,269.19-199.1c0,0-97.19-10.73-126.63-81.96-16.89-40.88,11.9-110.92,34.71-186.82Z"/>
-  <path class="cls-2" d="M499.43,176.06s-405.74,237.06,7.98,470.7c0,0-263.27-182.35-7.98-470.7Z"/>
-  <path class="cls-1" d="M200.97,191.12s67.11,73.72,83.7,272.21l16.59,198.49V278.88s-2.28-101.43-100.29-87.76Z"/>
-</svg>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html#egg5">Contact</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-
-
-                <div class="right hidden">
-
-
-
-                    <h1 style="margin-bottom:30px;" id="idkmannugget">
-                        <span id="typewriter"></span>
-                        <span id="cursor" class="typing-cursor">|</span>
-                    </h1>
-
-                    <a href="index.html#egg" class="btn-link">
-                        <button type="button" class="btn"">
-                            <strong>Get Started</strong>
-                            <div id="container-stars">
-                                <div id="stars"></div>
-                            </div>
-
-                            <div id="glow">
-                                <div class="circle"></div>
-                                <div class="circle"></div>
-                            </div>
-                        </button>
-                    </a>
-                </div>
-
-            </div>
-
-
-            <script>
-                particlesJS.load('particles-js', 'particles.json', function () {
-                    console.log('Particles.js loaded!');
-                });
-
-            </script>
-
-            <script>
-
-                window.onload = function () {
-                    var cursor = document.getElementById('cursor');
-                    cursor.style.opacity = 1;
-                    cursor.classList.add('typing-cursor'); // Use classList to add a class
-                }
-
-// Typewriter effect JavaScript
-                var speed = 39;
-                var deletespeed = 20;
-                var forward = true; // Flag to control typing direction
-
-                function typeWriter() {
-                    var i = 0;
-                    var typewriterElement = document.getElementById("typewriter");
-
-                    var initialText = "Hi, my name is Aloysius";
-                    var defaultText = "Welcome to my portfolio";
-
-                    var currentText = initialText; // Start with the initial text
-
-                    function type() {
-                        if (i < currentText.length && forward) {
-                            typewriterElement.textContent += currentText.charAt(i);
-                            i++;
-                            setTimeout(type, speed);
-                        } else {
-                            forward = false; // Change direction to rewinding
-                            setTimeout(rewind, 2000); // Wait for 2 seconds, then rewind
-                        }
-                    }
-
-                    function rewind() {
-                        if (i >= 0 && !forward) {
-                            typewriterElement.textContent = currentText.substring(0, i);
-                            i--;
-                            setTimeout(rewind, deletespeed);
-                        } else {
-                            forward = true; // Change direction to typing
-                            i = 0; // Reset the position
-
-                            // Switch between initial and default text
-                            currentText = currentText === initialText ? defaultText : initialText;
-                            setTimeout(type, 0); // Start typing again
-                        }
-                    }
-
-                    type();
-                }
-
-// Start the typewriter effect after the window has loaded
-                window.onload = typeWriter;
-
-            </script>
-
-
-
-
-        </section><br><br>  
-
-        <section id="egg" class="about">
-            <div class ="main">
-                <img class="hidden" src="images/IMG_1035.JPG" alt="picture of me" style="width:350px; border-radius: 10px;">
-                <div class="about-text hidden">
-                    <h1>About me</h1>
-                    <h5>Designer <span> & Developer</span> </h5>
-                    <p>
-                        Hi, my name is Aloysius Chew and I am a year 2 student at Republic Polytechnic studying Digital Design and Development and working towards being a developer. 
-                        This website will feature some of my works in the projects tab
-                    </p>
-                </div>
-
-
-
-            </div>
-        </section>
-
-        <section id="pokemon" class="skills">
-            <div class ="main hidden">     
-                <div class="skill-text">
-                    <h1>Skills</h1>
-                    <h5><span>Skills</span> picked up over the years </h5>
-
-
-                </div>
-            </div>
-
-
-            <div class="container-idk hidden">
-
-                <div class="card" >
-
-                    <div class="card-body text-white">
-                        <h4 class="card-title"><b>Front-end Development</b></h4>
-
-                        <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">HTML</p>
-                        <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">CSS</p>
-                        <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">PHP</p>
-                        <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Javascript</p>
-
-
-                    </div>
-                </div>
-
-
-
-
-                <div class="card">
-
-                    <div class="card-body text-white">
-                        <h4 class="card-title"><b>Back-end Development</b></h4>
-                        <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Python</p>
-                        <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Java</p>
-                        <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">MongoDB</p>
-                        <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">MySQL</p>
-
-
-                    </div>
-                </div>
-
-
-
-                <div class="card" >
-
-                    <div class="card-body text-white">
-                        <h4 class="card-title"><b>Others</b></h4>
-                        <p class="card-text" style="display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Adobe XD</p>
-                        <p class="card-text" style="display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Photoshop</p>
-                        <p class="card-text" style="display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Illustrator</p>
-                        <p class="card-text" style="display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px; margin-top: 3px;">Unity</p>
-
-
-
-
-                    </div>
-                </div>
-
-
-
-
-
-
-
-        </section>
-
-        <section id="versace-eros" class="projects">
-            <div class ="main3 hidden">     
-                <div class="projects-text" style="text-align:center;">
-                    <h1>Featured Projects</h1>
-                    <h5>Here you will see some of my favourite <span>projects</span></h5>
-
-                </div>
-            </div>
-
-            <div id="carouselProjects" class="carousel slide hidden" data-ride="carousel" >
-                <div class="carousel-inner" style="padding:30px;">
-                    <div class="carousel-item active">
-                        <div class="card" style="width: 69vw; height:auto;margin-left: auto; margin-right: auto; padding:30px;">
-                            <div class="row">
-                                <div class="col">
-                                    <img src="images/cinephileMainPic.png" class="card-img" alt="project pic">
-                                </div>
-                                <div class="col">
-                                    <div class="card-body">
-                                        <h4 class="card-title" style="text-align:left;">CinephilePicks (CP.)</h4>
-                                        <p class="card-text">CinephilePicks (CP) is a dynamic movie review website. It is made using HTML,CSS and PHP and connects to a MySQL databse.</p>
-                                        <p class="card-text"><small class="text-muted">Front-end & Back-end</small></p>
-                                        <div class="skillsForProjects" >
-                                            <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">HTML</p>
-                                            <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">CSS</p>
-                                            <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">PHP</p>
-                                            <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">MySQL</p>
-                                        </div>
-
-
-                                    </div>
-                                </div>
-                            </div>
+            </nav>
+            <div id="particles-js"></div>
+
+
+            <section id="spiderman" style="height: calc(100vh);">
+
+                <div class="containerHome">
+                    <div class="left hidden">
+                        <div id="logo" style="width:300px; margin-bottom: 50px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1" data-name="Layer 1" viewBox="0 0 629.09 756.83">
+                            <defs>
+                            <style>
+                                .cls-1 {
+                                    fill: #fff;
+                                }
+
+                                .cls-1, .cls-2 {
+                                    stroke: #231f20;
+                                    stroke-miterlimit: 10;
+                                }
+
+                                .cls-2 {
+                                    fill: url(#linear-gradient);
+                                }
+                            </style>
+                            <linearGradient id="linear-gradient" x1="321.44" y1="411.41" x2="507.4" y2="411.41" gradientUnits="userSpaceOnUse">
+                            <stop offset=".05" stop-color="#fff200"/>
+                            <stop offset=".28" stop-color="#fcd808"/>
+                            <stop offset=".76" stop-color="#f8a717"/>
+                            <stop offset="1" stop-color="#f7941d"/>
+                            </linearGradient>
+                            </defs>
+                            <path class="cls-1" d="M187.31,191.89L10.03,659.77s144.02-230.93,269.19-199.1c0,0-97.19-10.73-126.63-81.96-16.89-40.88,11.9-110.92,34.71-186.82Z"/>
+                            <path class="cls-2" d="M499.43,176.06s-405.74,237.06,7.98,470.7c0,0-263.27-182.35-7.98-470.7Z"/>
+                            <path class="cls-1" d="M200.97,191.12s67.11,73.72,83.7,272.21l16.59,198.49V278.88s-2.28-101.43-100.29-87.76Z"/>
+                            </svg>
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <div class="card" style="width: 69vw; height:auto;margin-left: auto; margin-right: auto; padding:30px;">
-                            <div class="row">
-                                <div class="col">
-                                    <img src="images/weatherappMainPic.png" class="card-img" alt="project pic">
+
+
+                    <div class="right hidden">
+
+
+
+                        <h1 style="margin-bottom:30px;" id="idkmannugget">
+                            <span id="typewriter"></span>
+                            <span id="cursor" class="typing-cursor">|</span>
+                        </h1>
+
+                        <a href="index.html#egg" class="btn-link">
+                            <button type="button" class="btn"">
+                                <strong>Get Started</strong>
+                                <div id="container-stars">
+                                    <div id="stars"></div>
                                 </div>
-                                <div class="col">
-                                    <div class="card-body">
-                                        <h4 class="card-title" style="text-align:left;">Android Weather App</h4>
-                                        <p class="card-text">This is an Android app designed to fetch and display 2-hour weather forecast for different areas in Singapore using an API</p>
-                                        <p class="card-text"><small class="text-muted">Front-end & Back-end</small></p>
-                                        <div class="skillsForProjects" >
-                                            <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">HTML</p>
-                                            <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">CSS</p>
-                                            <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">PHP</p>
-                                            <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">MySQL</p>
-                                        </div>
-                                    </div>
+
+                                <div id="glow">
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
                                 </div>
-                            </div>
+                            </button>
+                        </a>
+                    </div>
+
+                </div>
+
+
+                <script>
+                    particlesJS.load('particles-js', 'particles.json', function () {
+                        console.log('Particles.js loaded!');
+                    });
+
+                </script>
+
+                <script>
+
+                    window.onload = function () {
+                        var cursor = document.getElementById('cursor');
+                        cursor.style.opacity = 1;
+                        cursor.classList.add('typing-cursor'); // Use classList to add a class
+                    }
+
+
+                    var speed = 39;
+                    var deletespeed = 20;
+                    var forward = true; // Flag to control typing direction
+
+                    function typeWriter() {
+                        var i = 0;
+                        var typewriterElement = document.getElementById("typewriter");
+
+                        var initialText = "Hi, my name is Aloysius";
+                        var defaultText = "Welcome to my portfolio";
+
+                        var currentText = initialText; // Start with the initial text
+
+                        function type() {
+                            if (i < currentText.length && forward) {
+                                typewriterElement.textContent += currentText.charAt(i);
+                                i++;
+                                setTimeout(type, speed);
+                            } else {
+                                forward = false; // Change direction to rewinding
+                                setTimeout(rewind, 2000); // Wait for 2 seconds, then rewind
+                            }
+                        }
+
+                        function rewind() {
+                            if (i >= 0 && !forward) {
+                                typewriterElement.textContent = currentText.substring(0, i);
+                                i--;
+                                setTimeout(rewind, deletespeed);
+                            } else {
+                                forward = true; // Change direction to typing
+                                i = 0; // Reset the position
+
+                                // Switch between initial and default text
+                                currentText = currentText === initialText ? defaultText : initialText;
+                                setTimeout(type, 0); // Start typing again
+                            }
+                        }
+
+                        type();
+                    }
+
+    // Start the typewriter effect after the window has loaded
+                    window.onload = typeWriter;
+
+                </script>
+
+
+
+
+            </section><br><br>  
+
+            <section id="egg" class="about">
+                <div class ="main">
+                    <img class="hiddenLeft" src="images/IMG_1035.JPG" alt="picture of me" style="width:350px; border-radius: 10px;">
+                    <div class="about-text hiddenRight">
+                        <h1>About me</h1>
+                        <h5>Designer <span> & Developer</span> </h5>
+                        <p>
+                            Hi, my name is Aloysius Chew and I am a year 2 student at Republic Polytechnic studying Digital Design and Development and working towards being a developer. 
+                            This website will feature some of my works in the projects tab
+                        </p>
+                    </div>
+
+
+
+                </div>
+            </section>
+
+            <section id="pokemon" class="skills">
+                <div class ="main hidden">     
+                    <div class="skill-text">
+                        <h1>Skills</h1>
+                        <h5><span>Skills</span> picked up over the years </h5>
+
+
+                    </div>
+                </div>
+
+
+                <div class="container-idk hidden">
+
+                    <div class="card" >
+
+                        <div class="card-body text-white">
+                            <h4 class="card-title"><b>Front-end Development</b></h4>
+
+                            <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">HTML</p>
+                            <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">CSS</p>
+                            <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">PHP</p>
+                            <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Javascript</p>
+
+
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <a href="your_destination_page.html" style="text-decoration: none; color: inherit; cursor: pointer;">>
-                            <div class="card" style="width: 69vw; height:auto;margin-left: auto; margin-right: auto; padding:30px;">
+
+
+
+
+                    <div class="card">
+
+                        <div class="card-body text-white">
+                            <h4 class="card-title"><b>Back-end Development</b></h4>
+                            <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Python</p>
+                            <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Java</p>
+                            <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">MongoDB</p>
+                            <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">MySQL</p>
+
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="card" >
+
+                        <div class="card-body text-white">
+                            <h4 class="card-title"><b>Others</b></h4>
+                            <p class="card-text" style="display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Adobe XD</p>
+                            <p class="card-text" style="display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Photoshop</p>
+                            <p class="card-text" style="display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Illustrator</p>
+                            <p class="card-text" style="display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px; margin-top: 3px;">Unity</p>
+
+
+
+
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+            </section>
+
+            <section id="versace-eros" class="projects">
+                <div class ="main hidden">     
+                    <div class="projects-text">
+                        <h1>Featured Projects</h1>
+                        <h5>Here you will see some of my favourite <span>projects</span></h5>
+
+                    </div>
+                </div>
+
+                <div id="carouselProjects" class="carousel slide hidden" data-ride="carousel" >
+                    <div class="carousel-inner" style="padding:30px;">
+                        <div class="carousel-item active">
+                            <div class="card" style="width: 60vw; height:auto;margin-left: auto; margin-right: auto; padding:30px;">
                                 <div class="row">
                                     <div class="col">
-                                        <img src="images/railedMainPic.png" class="card-img" alt="project pic">
+                                        <img src="images/cinephileMainPic.png" class="card-img" alt="project pic">
                                     </div>
                                     <div class="col">
                                         <div class="card-body">
-                                            <h4 class="card-title" style="text-align:left;">Railed.</h4>
-                                            <p class="card-text">This is a prototype for "Railed" a website to sign up for skating lessons. Made using Adobe XD, Photoshop and Illustrator</p>
+                                            <h4 class="card-title" style="text-align:left;">CinephilePicks (CP.)</h4>
+                                            <p class="card-text">CinephilePicks (CP) is a dynamic movie review website. It is made using HTML,CSS and PHP and connects to a MySQL databse.</p>
                                             <p class="card-text"><small class="text-muted">Front-end & Back-end</small></p>
                                             <div class="skillsForProjects" >
-                                                <p class="card-text" style="display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Adobe XD</p>
-                                                <p class="card-text" style="display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Photoshop</p>
-                                                <p class="card-text" style="display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Illustrator</p>
+                                                <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">HTML</p>
+                                                <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">CSS</p>
+                                                <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">PHP</p>
+                                                <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">MySQL</p>
                                             </div>
 
 
@@ -1099,59 +1207,102 @@
                                     </div>
                                 </div>
                             </div>
-                        </a>
-                    </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselProjects" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselProjects" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
-
-
-
-
-        </section>
-
-        <section id="egg5" class="contact">
-            <div class ="main">
-                <div class="about-text hidden">
-                    <h1>Contact me</h1>
-                    <h5>I will get back to you <span>ASAP</span> </h5>
-
-                    <form action="" class="contact-form">
-                        <div class="input-row">
-                            <input type="text" placeholder="Your Name"  required>
-                            <input type="email" name="email" placeholder="Email"  required>
                         </div>
-                        <input type="text" placeholder="Write a subject"  required>
-                        <textarea name="enquire" cols="10" rows="1" placeholder="Your Message" required style="width:100%;"></textarea>
-
-                        <button type="submit" class="btn" style="width:100%; margin-top:25px;">
-                            <strong>Submit</strong>
-                            <div id="container-stars">
-                                <div id="stars"></div>
+                        <div class="carousel-item">
+                            <div class="card" style="width: 60vw; height:auto;margin-left: auto; margin-right: auto; padding:30px;">
+                                <div class="row">
+                                    <div class="col">
+                                        <img src="images/weatherappMainPic.png" class="card-img" alt="project pic">
+                                    </div>
+                                    <div class="col">
+                                        <div class="card-body">
+                                            <h4 class="card-title" style="text-align:left;">Android Weather App</h4>
+                                            <p class="card-text">This is an Android app designed to fetch and display 2-hour weather forecast for different areas in Singapore using an API</p>
+                                            <p class="card-text"><small class="text-muted">Front-end & Back-end</small></p>
+                                            <div class="skillsForProjects" >
+                                                <p class="card-text" style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Java</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="your_destination_page.html" style="text-decoration: none; color: inherit; cursor: pointer;">>
+                                <div class="card" style="width: 60vw; height:auto;margin-left: auto; margin-right: auto; padding:30px;">
+                                    <div class="row">
+                                        <div class="col">
+                                            <img src="images/railedMainPic.png" class="card-img" alt="project pic">
+                                        </div>
+                                        <div class="col">
+                                            <div class="card-body">
+                                                <h4 class="card-title" style="text-align:left;">Railed.</h4>
+                                                <p class="card-text">This is a prototype for "Railed" a website to sign up for skating lessons. Made using Adobe XD, Photoshop and Illustrator</p>
+                                                <p class="card-text"><small class="text-muted">Front-end & Back-end</small></p>
+                                                <div class="skillsForProjects" >
+                                                    <p class="card-text" style="display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Adobe XD</p>
+                                                    <p class="card-text" style="display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Photoshop</p>
+                                                    <p class="card-text" style="display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">Illustrator</p>
+                                                </div>
 
-                            <div id="glow">
-                                <div class="circle"></div>
-                                <div class="circle"></div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselProjects" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselProjects" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+
+
+
+
+            </section>
+
+            <section id="egg5" class="contact">
+                <div class ="main">
+                    <div class="about-text hiddenLeft">
+                        <h1>Contact me</h1>
+                        <h5>I will get back to you <span>ASAP</span> </h5>
+
+                        <form action="" class="contact-form">
+                            <div class="input-row">
+                                <input type="text" placeholder="Your Name"  required>
+                                <input type="email" name="email" placeholder="Email"  required>
                             </div>
-                        </button>
-                    </form>
+                            <input type="text" placeholder="Write a subject"  required>
+                            <textarea name="enquire" cols="10" rows="1" placeholder="Your Message" required style="width:100%;"></textarea>
 
+                            <button type="submit" class="btn" style="width:100%; margin-top:25px;">
+                                <strong>Submit</strong>
+                                <div id="container-stars">
+                                    <div id="stars"></div>
+                                </div>
+
+                                <div id="glow">
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                </div>
+                            </button>
+                        </form>
+
+
+
+                    </div>
+                    <img class="hiddenRight" src="images/IMG_1031.JPG" alt="picture of me" style="width:350px; margin-top: 30px; border-radius: 10px;">   
 
 
                 </div>
-                <img class="hidden" src="images/IMG_1031.JPG" alt="picture of me" style="width:350px; margin-top: 30px; border-radius: 10px;">   
-
-
-            </div>
-        </section>
+            </section>
 
 
 
@@ -1159,52 +1310,75 @@
 
 
 
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                // Smooth scrolling for anchor links
-                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                    anchor.addEventListener('click', function (e) {
-                        e.preventDefault();
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    // Smooth scrolling for anchor links
+                    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                        anchor.addEventListener('click', function (e) {
+                            e.preventDefault();
 
-                        document.querySelector(this.getAttribute('href')).scrollIntoView({
-                            behavior: 'smooth'
+                            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                                behavior: 'smooth'
+                            });
                         });
                     });
                 });
-            });
-        </script>
+            </script>
+            
+             <div class="circleCursor"></div>
+  <div class="circleCursor"></div>
+  <div class="circleCursor"></div>
+  <div class="circleCursor"></div>
+  <div class="circleCursor"></div>
+  <div class="circleCursor"></div>
+  <div class="circleCursor"></div>
+  <div class="circleCursor"></div>
+  <div class="circleCursor"></div>
+  <div class="circleCursor"></div>
+  <div class="circleCursor"></div>
+  <div class="circleCursor"></div>
+  <div class="circleCursor"></div>
+  <div class="circleCursor"></div>
+  <div class="circleCursor"></div>
+  <div class="circleCursor"></div>
+  <div class="circleCursor"></div>
+  <div class="circleCursor"></div>
+  <div class="circleCursor"></div>
+  <div class="circleCursor"></div>
+  <div class="circleCursor"></div>
+            
+
+            <section class="footer">
+                <div class="social">
+                    <a href="mailto:22001095@myrp.edu.sg"><i class="fa fa-envelope"></i></a>
+                    <a href="https://github.com/aloysiuschewzhiyong"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.instagram.com/chikennuggetcurrysauce/"><i class="fa-brands fa-square-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/aloysius-chew-880609244/"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+
+                <ul class="list">
+                    <li>
+                        <a href="index.html#">Home</a>
+                    </li>
+                    <li>
+                        <a href="index.html#egg">About me</a>
+                    </li>
+                    <li>
+                        <a href="index.html#versace-eros">Projects</a>
+                    </li>
+                    <li>
+                        <a href="index.html#egg5">Contact me</a>
+                    </li>
+                </ul>
+                <p class="copyright">
+                    Aloysius Chew © 2023
+                </p>
 
 
-        <section class="footer">
-            <div class="social">
-                <a href="mailto:22001095@myrp.edu.sg"><i class="fa fa-envelope"></i></a>
-                <a href="https://github.com/aloysiuschewzhiyong"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.instagram.com/chikennuggetcurrysauce/"><i class="fa-brands fa-square-instagram"></i></a>
-                <a href="https://www.linkedin.com/in/aloysius-chew-880609244/"><i class="fa-brands fa-linkedin"></i></a>
-            </div>
+            </section>
 
-            <ul class="list">
-                <li>
-                    <a href="#">Home</a>
-                </li>
-                <li>
-                    <a href="#">About me</a>
-                </li>
-                <li>
-                    <a href="#">Projects</a>
-                </li>
-                <li>
-                    <a href="#">Contact me</a>
-                </li>
-            </ul>
-            <p class="copyright">
-                Aloysius Chew © 2023
-            </p>
+        </body>
 
+     
 
-        </section>
-
-    </body>
-
-
-</html>
+    </html>
