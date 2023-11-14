@@ -82,18 +82,28 @@
 
             .containerHome{
                 display: flex;
-                justify-content: space-around;
+                justify-content: center;
                 padding:0;
 
             }
 
-            .left, .right {
+            .right {
+                width:80vw;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 height: 100vh;
                 margin: 0;
+                flex:1;
+            }
+            
+            .left {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
                 flex:1;
             }
 
@@ -647,14 +657,22 @@
 
                 }
 
-                .left , .right{
-                    width:100vw;
-                }
-
+    
                 .card{
                     display: flex;
                     flex-direction:column;
                 }
+                
+                .left , .right {
+                width:100vw;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                flex:1;
+            }
             }
 
             #logo:hover{
@@ -790,34 +808,33 @@
             <div class="containerHome">
                 <div class="left hidden">
                     <div id="logo" style="width:300px; margin-bottom: 50px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1" data-name="Layer 1" viewBox="0 0 606.1 734.19">
-                        <defs>
-                        <style>
-                            .cls-1 {
-                                fill: #fff;
-                            }
+                       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1" data-name="Layer 1" viewBox="0 0 629.09 756.83">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
 
-                            .cls-1, .cls-2 {
-                                stroke: #231f20;
-                                stroke-miterlimit: 10;
-                            }
+      .cls-1, .cls-2 {
+        stroke: #231f20;
+        stroke-miterlimit: 10;
+      }
 
-                            .cls-2 {
-                                fill: url(#linear-gradient);
-                            }
-                        </style>
-                        <linearGradient id="linear-gradient" x1="299.75" y1="412.07" x2="473.17" y2="412.07" gradientUnits="userSpaceOnUse">
-                        <stop offset="0" stop-color="#fff33b"/>
-                        <stop offset=".2" stop-color="#fdd92a"/>
-                        <stop offset=".42" stop-color="#fcc71e"/>
-                        <stop offset=".64" stop-color="#fbbb17"/>
-                        <stop offset=".88" stop-color="#fbb815"/>
-                        </linearGradient>
-                        </defs>
-                        <path class="cls-1" d="M174.67,207.36L9.36,643.68s134.31-215.35,251.03-185.67c0,0-90.64-10.01-118.09-76.43-15.76-38.13,11.09-103.44,32.37-174.22Z"/>
-                        <path class="cls-2" d="M465.73,192.59s-378.37,221.07,7.44,438.95c0,0-245.51-170.05-7.44-438.95Z"/>
-                        <path class="cls-1" d="M187.41,206.64s62.58,68.74,78.05,253.85l15.47,185.1V288.48s-2.13-94.59-93.53-81.84Z"/>
-                        </svg>
+      .cls-2 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="321.44" y1="411.41" x2="507.4" y2="411.41" gradientUnits="userSpaceOnUse">
+      <stop offset=".05" stop-color="#fff200"/>
+      <stop offset=".28" stop-color="#fcd808"/>
+      <stop offset=".76" stop-color="#f8a717"/>
+      <stop offset="1" stop-color="#f7941d"/>
+    </linearGradient>
+  </defs>
+  <path class="cls-1" d="M187.31,191.89L10.03,659.77s144.02-230.93,269.19-199.1c0,0-97.19-10.73-126.63-81.96-16.89-40.88,11.9-110.92,34.71-186.82Z"/>
+  <path class="cls-2" d="M499.43,176.06s-405.74,237.06,7.98,470.7c0,0-263.27-182.35-7.98-470.7Z"/>
+  <path class="cls-1" d="M200.97,191.12s67.11,73.72,83.7,272.21l16.59,198.49V278.88s-2.28-101.43-100.29-87.76Z"/>
+</svg>
                     </div>
                 </div>
 
