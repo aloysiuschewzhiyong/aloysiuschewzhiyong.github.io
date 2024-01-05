@@ -10,6 +10,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="stylesheet.css" />
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -29,15 +34,21 @@
             cursor: none;
         }
 
+
         h1 {
-            font-weight: bold;
+            font-weight: 600;
             margin-bottom: 20px;
             font-size: 5rem;
+        }
+
+        h4 {
+            font-size:1.3rem;
         }
 
         h5 {
             font-size: 1.625rem;
             margin-bottom: 25px;
+            font-weight: 500;
         }
 
 
@@ -80,7 +91,6 @@
 
         #typewriter {
             font-size: 3rem;
-            font-weight: bolder;
             color: white;
         }
 
@@ -146,7 +156,6 @@
 
         strong {
             z-index: 3;
-            font-family: 'Poppins';
             font-size: 20px;
 
             color: #FFFFFF;
@@ -454,7 +463,8 @@
         .card-title {
             text-align: center;
             margin-bottom: 20px;
-            font-weight: bold;
+            font-weight: 600;
+            font-size: 1.6rem;
 
 
         }
@@ -486,15 +496,14 @@
 
         .card-img {
             width: 30vw;
-            margin-left: 20px;
             min-width: 225px;
             align-self: center;
         }
 
         .modal-img {
-            width:50vw;
-            min-width:369px;
-            align-self: center;
+            width: 100%;
+            min-width: 369px;
+            justify-content: center;
 
         }
 
@@ -641,6 +650,10 @@
 
         }
 
+        .card-text p{
+            display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px;
+        }
+
 
         #logo:hover {
             transform: rotate(360deg);
@@ -779,6 +792,10 @@
                     transform: translateX(0) translateY(0);
                 }
 
+                .modal-img2 {
+                    display: none;
+                }
+
 
 
 
@@ -868,16 +885,29 @@
             margin: 0;
         }
 
-        .projectBtn{
+        .projectBtn {
             font-size: 1.2rem;
-            width:50px;
+            width: 50px;
             background-color: yellow;
-            padding:3px;
+            padding: 3px;
             border-radius: 10px;
         }
 
-        .projectBtn:hover{
+        .projectBtn:hover {
             background-color: rgb(149, 146, 0);
+        }
+
+
+        p {
+            font-weight: 500;
+        }
+
+        h4 {
+            font-weight: 600;
+        }
+
+        .skillsForProjects p , .icon-container p{
+            font-weight:400;
         }
     </style>
 </head>
@@ -1119,9 +1149,7 @@
                 <a href="index.html#egg" class="btn-link">
                     <button type="button" class="btn">
                         <strong>Get Started</strong>
-                        <div id="container-stars">
-                            <div id="stars"></div>
-                        </div>
+                        <div id="container-stars"></div>
 
                         <div id="glow">
                             <div class="circle"></div>
@@ -1237,7 +1265,7 @@
             <div class="card">
 
                 <div class="card-body text-white">
-                    <h4 class="card-title"><b>Front-end Development</b></h4>
+                    <h4 class="card-title">Front-end Development</h4>
 
                     <div class="icon-container">
                         <i class="devicon-html5-plain"></i>
@@ -1272,9 +1300,9 @@
             <div class="card">
 
                 <div class="card-body text-white">
-                    <h4 class="card-title"><b>Back-end Development</b></h4>
+                    <h4 class="card-title">Back-end Development</h4>
 
-                    
+
                     <div class="icon-container">
                         <i class="devicon-python-plain"></i>
                         <p>Python</p>
@@ -1300,13 +1328,13 @@
                         <p>MongoDB</p>
                     </div>
 
-                    
+
                     <div class="icon-container">
                         <i class="devicon-csharp-plain"></i>
                         <p>C#</p>
                     </div>
 
-                
+
 
 
 
@@ -1319,7 +1347,7 @@
             <div class="card">
 
                 <div class="card-body text-white">
-                    <h4 class="card-title"><b>Others</b></h4>
+                    <h4 class="card-title">Others</h4>
 
 
                     <div class="icon-container">
@@ -1402,32 +1430,33 @@
                 <div class="carousel-item">
                     <a href="your_destination_page.html" data-toggle="modal" data-target="#linkShrinkernatorModal"
                         style="text-decoration: none; color: inherit; cursor: pointer;">
-                    <div class="card"
-                        style="width: 60vw; height:auto;margin-left: auto; margin-right: auto; padding:30px;">
-                        <div class="row">
-                            <div class="col">
-                                <img src="images/linkShrinkernator2png.png" class="card-img" alt="project pic">
-                            </div>
-                            <div class="col">
-                                <div class="card-body">
-                                    <h4 class="card-title" style="text-align:left;">Link Shrinkernator</h4>
-                                    <p class="card-text">A web app that shortens URLs using the TinyURL API. Input URL, get a shortened link—simple and efficient.</p>
-                                    <p class="card-text"><small class="text-muted">Web Application</small></p>
-                                    <div class="skillsForProjects">
-                                        <p class="card-text"
-                                            style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">
-                                            HTML</p>
-                                        <p class="card-text"
-                                            style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">
-                                            CSS</p>
-                                        <p class="card-text"
-                                            style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">
-                                            Javascript</p>
+                        <div class="card"
+                            style="width: 60vw; height:auto;margin-left: auto; margin-right: auto; padding:30px;">
+                            <div class="row">
+                                <div class="col">
+                                    <img src="images/linkShrinkernator2png.png" class="card-img" alt="project pic">
+                                </div>
+                                <div class="col">
+                                    <div class="card-body">
+                                        <h4 class="card-title" style="text-align:left;">Link Shrinkernator</h4>
+                                        <p class="card-text">A web app that shortens URLs using the TinyURL API. Input
+                                            URL, get a shortened link—simple and efficient.</p>
+                                        <p class="card-text"><small class="text-muted">Web Application</small></p>
+                                        <div class="skillsForProjects">
+                                            <p class="card-text"
+                                                style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">
+                                                HTML</p>
+                                            <p class="card-text"
+                                                style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">
+                                                CSS</p>
+                                            <p class="card-text"
+                                                style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">
+                                                Javascript</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
                     </a>
                 </div>
@@ -1522,7 +1551,6 @@
                     <button type="submit" class="btn" style="width:100%; margin-top:25px;">
                         <strong>Submit</strong>
                         <div id="container-stars">
-                            <div id="stars"></div>
                         </div>
 
                         <div id="glow">
@@ -1552,8 +1580,8 @@
                         <div class="col">
 
                             <a href="#" data-toggle="modal" data-target="#innerModal">
-                                <img data-toggle="tooltip" title="Click to enlarge"
-                                    src="images/railedMainPic.png" class="modal-img" alt="project pic">
+                                <img data-toggle="tooltip" title="Click to enlarge" src="images/railedMainPic.png"
+                                    class="modal-img" alt="project pic">
                             </a>
                         </div>
                         <div class="col">
@@ -1561,7 +1589,8 @@
                                 <h2 class="card-title" style="text-align:left;">Railed.</h2>
                                 <p class="card-text">
                                 <ul>
-                                    <li>This high fidelity wireframe was done as an assignment for my Front-end Web Development module
+                                    <li>This high fidelity wireframe was done as an assignment for my Front-end Web
+                                        Development module
                                     </li><br>
                                     <li>It is for a website to sign up for skating lessons. Made using Adobe XD,
                                         Photoshop and Illustrator</li>
@@ -1591,26 +1620,31 @@
 
                                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                                     <div class="carousel-inner">
-                                      <div class="carousel-item active">
-                                          <img src="images/railedMainPic.png" class="card-img" alt="project pic" style="width: 100%; height:auto;">
-                                      </div>
-                                      <div class="carousel-item">
-                                        <img src="images/railedMainPic.png" class="card-img" alt="project pic" style="width: 100%; height:auto;">
-                                      </div>
-                                      <div class="carousel-item">
-                                        <img src="images/railedMainPic.png" class="card-img" alt="project pic" style="width: 100%; height:auto;">
-                                      </div>
+                                        <div class="carousel-item active">
+                                            <img src="images/railedMainPic.png" class="card-img" alt="project pic"
+                                                style="width: 100%; height:auto;">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="images/railedMainPic.png" class="card-img" alt="project pic"
+                                                style="width: 100%; height:auto;">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="images/railedMainPic.png" class="card-img" alt="project pic"
+                                                style="width: 100%; height:auto;">
+                                        </div>
                                     </div>
-                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                      <span class="visually-hidden">Previous</span>
+                                    <button class="carousel-control-prev" type="button"
+                                        data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
                                     </button>
-                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                      <span class="visually-hidden">Next</span>
+                                    <button class="carousel-control-next" type="button"
+                                        data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
                                     </button>
-                                  </div>
-                              
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -1620,7 +1654,6 @@
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">
                         <strong>Close</strong>
                         <div id="container-stars">
-                            <div id="stars"></div>
                         </div>
 
                         <div id="glow">
@@ -1648,13 +1681,19 @@
                                 <img data-toggle="tooltip" title="Click to enlarge"
                                     src="images/linkShrinkernator1png.png" class="modal-img" alt="project pic">
                             </a>
+                            <a href="#" data-toggle="modal" data-target="#innerModal">
+                                <img data-toggle="tooltip" title="Click to enlarge"
+                                    src="images/linkShrinkernator1png.png" class="modal-img modal-img2"
+                                    alt="project pic" style="margin-top: 10px;">
+                            </a>
+
                         </div>
                         <div class="col">
                             <div class="card-body" style="padding-top: 30px;">
                                 <h2 class="card-title" style="text-align:left;">Link Shrinkernator</h2>
                                 <p class="card-text">
 
-                                    <p class="card-text"><small class="text-muted">Web Application</small></p>
+                                <p class="card-text"><small class="text-muted">Web Application</small></p>
                                 <div class="skillsForProjects">
                                     <p class="card-text"
                                         style="display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">
@@ -1666,14 +1705,20 @@
                                         style="display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">
                                         Javascript</p>
                                 </div><br>
-                                 <b>Description</b>
+                                <p class="modalHeaders">Description</p>
                                 <ul>
-                                    <li>The Link Shrinkernator is a simple web application that allows users to shorten long URLs into concise and shareable links.
+                                    <li>The Link Shrinkernator is a simple web application that allows users to shorten
+                                        long URLs into concise and shareable links.
                                     </li><br>
-                                    <li> Built with HTML, CSS, and JavaScript, the design is clean and responsive, ensuring a seamless user experience across various devices.</li>
+                                    <li>This small side project that was done as a way for me to familiarize myself with
+                                        working integrating APIs into web apps with Javascript (Understanding how to
+                                        structure the API request, handle the response, and update the UI accordingly)
+                                    </li><br>
+                                    <li> Built with HTML, CSS, and JavaScript, the design is clean and responsive,
+                                        ensuring a seamless user experience across various devices.</li>
                                 </ul><br>
 
-                                <b>How to Use:</b>
+                                <p class="modalHeaders">How to Use:</p>
                                 <ol>
                                     <li>Enter the URL to be shortened in the input field</li><br>
                                     <li>Click the "Submit" button to generate a shortened link.</li><br>
@@ -1694,26 +1739,31 @@
 
                                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                                     <div class="carousel-inner">
-                                      <div class="carousel-item active">
-                                          <img src="images/railedMainPic.png" class="card-img" alt="project pic" style="width: 100%; height:auto;">
-                                      </div>
-                                      <div class="carousel-item">
-                                        <img src="images/railedMainPic.png" class="card-img" alt="project pic" style="width: 100%; height:auto;">
-                                      </div>
-                                      <div class="carousel-item">
-                                        <img src="images/railedMainPic.png" class="card-img" alt="project pic" style="width: 100%; height:auto;">
-                                      </div>
+                                        <div class="carousel-item active">
+                                            <img src="images/railedMainPic.png" class="card-img" alt="project pic"
+                                                style="width: 100%; height:auto;">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="images/railedMainPic.png" class="card-img" alt="project pic"
+                                                style="width: 100%; height:auto;">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="images/railedMainPic.png" class="card-img" alt="project pic"
+                                                style="width: 100%; height:auto;">
+                                        </div>
                                     </div>
-                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                      <span class="visually-hidden">Previous</span>
+                                    <button class="carousel-control-prev" type="button"
+                                        data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
                                     </button>
-                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                      <span class="visually-hidden">Next</span>
+                                    <button class="carousel-control-next" type="button"
+                                        data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
                                     </button>
-                                  </div>
-                              
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -1721,16 +1771,16 @@
                 <div class="modal-footer d-flex justify-content-between align-items-center">
                     <p class="mb-0">Date: 21/12/2023</p>
 
-                    <div class="projectLinks d-flex flex-direction-row" >
+                    <div class="projectLinks d-flex flex-direction-row">
 
-                    <button type="button" class="projectBtn">
-                        <i class="fa-brands fa-github"></i>
-                    </button>
-                    <button type="button" class="projectBtn">
-                        <i class="fa-solid fa-link"></i>
-                    </button>
-                    
-                </div>
+                        <button type="button" class="projectBtn">
+                            <i class="fa-brands fa-github"></i>
+                        </button>
+                        <button type="button" class="projectBtn">
+                            <i class="fa-solid fa-link"></i>
+                        </button>
+
+                    </div>
                 </div>
 
 
