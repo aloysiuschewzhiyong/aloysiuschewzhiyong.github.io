@@ -92,7 +92,7 @@
 
 
 
-                <a href="index.html#egg" class="btn-link">
+                <a href="index.html#egg" class="btn-link" style="text-decoration: none;">
                     <button type="button" class="btn">
                         <strong>Get Started</strong>
                         <div id="container-stars"></div>
@@ -445,30 +445,6 @@
 
                     </a>
                 </div>
-
-                <div class="carousel-item">
-                    <div class="card"
-                        style="width: 60vw; height:auto;margin-left: auto; margin-right: auto; padding:30px;">
-                        <div class="row">
-                            <div class="col">
-                                <img src="images/weatherappMainPic.png" class="card-img" alt="project pic">
-                            </div>
-                            <div class="col">
-                                <div class="card-body">
-                                    <h4 class="card-title" style="text-align:left;">Android Weather App</h4>
-                                    <p class="card-text">This is an Android app designed to fetch and display 2-hour
-                                        weather forecast for different areas in Singapore using an API</p>
-                                    <p class="card-text"><small class="text-muted">Android Application</small></p>
-                                    <div class="skillsForProjects">
-                                        <p class="card-text"
-                                            style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">
-                                            Java</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="carousel-item">
                     <a href="your_destination_page.html" data-toggle="modal" data-target="#railedModal"
                         style="text-decoration: none; color: inherit; cursor: pointer;">
@@ -503,7 +479,67 @@
                         </div>
                     </a>
                 </div>
+
+                <div class="carousel-item">
+                    <a href="your_destination_page.html" data-toggle="modal" data-target="#ampItUP"
+                        style="text-decoration: none; color: inherit; cursor: pointer;">
+                        <div class="card"
+                            style="width: 60vw; height:auto;margin-left: auto; margin-right: auto; padding:30px;">
+                            <div class="row">
+                                <div class="col">
+                                    <img src="images/healingHeat.png" class="card-img" alt="project pic">
+                                </div>
+                                <div class="col">
+                                    <div class="card-body">
+                                        <h4 class="card-title" style="text-align:left;">Railed.</h4>
+                                        <p class="card-text">This is a prototype for "Railed" a website to sign up for
+                                            skating lessons. Made using Adobe XD, Photoshop and Illustrator</p>
+                                        <p class="card-text"><small class="text-muted">Wireframe</small></p>
+                                        <div class="skillsForProjects">
+                                            <p class="card-text"
+                                                style="display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">
+                                                Adobe XD</p>
+                                            <p class="card-text"
+                                                style="display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">
+                                                Photoshop</p>
+                                            <p class="card-text"
+                                                style="display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">
+                                                Illustrator</p>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <div class="card"
+                        style="width: 60vw; height:auto;margin-left: auto; margin-right: auto; padding:30px;">
+                        <div class="row">
+                            <div class="col">
+                                <img src="images/weatherappMainPic.png" class="card-img" alt="project pic">
+                            </div>
+                            <div class="col">
+                                <div class="card-body">
+                                    <h4 class="card-title" style="text-align:left;">Android Weather App</h4>
+                                    <p class="card-text">This is an Android app designed to fetch and display 2-hour
+                                        weather forecast for different areas in Singapore using an API</p>
+                                    <p class="card-text"><small class="text-muted">Android Application</small></p>
+                                    <div class="skillsForProjects">
+                                        <p class="card-text"
+                                            style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">
+                                            Java</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+
             <a class="carousel-control-prev" href="#carouselProjects" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
@@ -519,7 +555,7 @@
 
 
         <div class="projectCategoriesContainer">
-            <a href="development.html"  target="_blank">
+            <a href="development.html" target="_blank">
                 <div class="card projectCatCard hiddenLeft">
                     <i class="fa-solid fa-code iconForProjectCats"></i>
 
@@ -531,7 +567,7 @@
                 </div>
             </a>
 
-            <a href="designs.html"  target="_blank">
+            <a href="designs.html" target="_blank">
                 <div class="card projectCatCard hiddenRight">
                     <i class="fa-solid fa-pen iconForProjectCats"></i>
                     <wrapper class="projectWrapper">
@@ -565,7 +601,7 @@
                     <textarea name="enquire" id="message" cols="10" rows="1" placeholder="Your Message" required
                         style="width:100%;"></textarea>
 
-                    <button onclick="sendMail()" class="btn" style="width:100%; margin-top:25px;">
+                    <button class="btn" type="submit" style="width:100%; margin-top:25px;">
                         <strong>Submit</strong>
                         <div id="container-stars">
                         </div>
@@ -588,6 +624,31 @@
 
 
     </section>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("fU-Ag65lyma2unMCO");
+        })();
+    
+        document.querySelector('.contact-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+    
+            var params = {
+                from_name: document.getElementById('from_name').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+    
+            emailjs.send('service_lbizyk6', 'template_z4nx5wv', params)
+                .then(function (response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    alert('Your message has been sent! I will get back to you ASAP 😊');
+                }, function (error) {
+                    console.log('FAILED...', error);
+                });
+        });
+    </script>
 
 
     <div data-includeHTML="modals.html"></div>
@@ -670,34 +731,6 @@
 </body>
 
 
-<script type="text/javascript">
-    (function () {
-        emailjs.init("fU-Ag65lyma2unMCO");
-    })();
-
-    const btn = document.getElementById('button');
-
-    document.getElementById('form')
-        .addEventListener('submit', function (event) {
-            event.preventDefault();
-
-            btn.value = 'Sending...';
-
-            const serviceID = 'service_lbizyk6';
-            const templateID = 'template_z4nx5wv';
-
-            emailjs.sendForm(serviceID, templateID, this)
-                .then(() => {
-                    btn.value = 'Send Email';
-                    alert('Sent!');
-                }, (err) => {
-                    btn.value = 'Send Email';
-                    alert(JSON.stringify(err));
-                });
-        });
-
-
-</script>
 
 
 

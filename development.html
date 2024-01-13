@@ -28,7 +28,7 @@
             }
 
             h1{
-                font-weight:bold; margin-bottom:20px;   font-size: 5rem;
+                font-weight:600; margin-bottom:20px;   font-size: 5rem; 
             }
 
             h5{
@@ -744,7 +744,6 @@
 
 
 
-
                 .wrapper{
                     margin-top: 20px;
                     padding-left:100px;
@@ -769,6 +768,7 @@
                     border-radius: 30px;
                     box-shadow: 0 0 10px rgba(255, 240, 0, 0);
                     transition: transform 0.5s;
+                    padding:0;
                 }
 
                 .card:hover {
@@ -801,6 +801,7 @@
 
         <body>
             <div data-includeHTML="navbar.html"></div>
+            <div data-includeHTML="modals.html"></div>
             <script>
                 particlesJS.load('particles-js', 'particles.json', function () {
                     console.log('Particles.js loaded!');
@@ -841,20 +842,30 @@
 
 
                 <div class="wrapper">
-                    <div class="item hidden">
-                        <a><img src="images/cinephileMainPic.png" class="card" alt="project pic" style="width:27vw; min-width: 250px; height:auto;"></a>  
+                     <div class="item hidden">
+                        <a data-toggle="modal" data-target="#ampItUP"
+                        style="text-decoration: none; color: inherit; cursor: pointer;"><img src="images/cinephileMainPic.png" class="card" alt="project pic" style="width:27vw; min-width: 250px; height:auto;"></a>  
                     </div>
                     <div class="item hidden">
-                        <a><img src="images/kachow2.png" class="card" alt="project pic" style="width:27vw; min-width: 250px; height:auto;"></a>  
+                        <a data-toggle="modal" data-target="#ampItUP"
+                        style="text-decoration: none; color: inherit; cursor: pointer;"><img src="images/kachow2.png" class="card" alt="project pic" style="width:27vw; min-width: 250px; height:auto;"></a>  
                     </div>
                     <div class="item hidden">
-                        <a><img src="images/linkShrinkernator2png.png" class="card" alt="project pic" style="width:27vw; min-width: 250px; height:auto;"></a>  
+                        <a data-toggle="modal" data-target="#ampItUP"
+                        style="text-decoration: none; color: inherit; cursor: pointer;"><img src="images/linkShrinkernator2png.png" class="card" alt="project pic" style="width:27vw; min-width: 250px; height:auto;"></a>  
                     </div>
                     <div class="item hidden">
-                        <a><img src="images/weatherappMainPic.png" class="card" alt="project pic" style="width:27vw; min-width: 250px; height:auto;"></a>  
+                        <a data-toggle="modal" data-target="#ampItUP"
+                        style="text-decoration: none; color: inherit; cursor: pointer;"><img src="images/worldXplore1.png" class="card" alt="project pic" style="width:27vw; min-width: 250px; height:auto;"></a>  
                     </div>
-                 
-
+                    <div class="item hidden">
+                        <a data-toggle="modal" data-target="#ampItUP"
+                        style="text-decoration: none; color: inherit; cursor: pointer;"><img src="images/soiPortal1.png" class="card" alt="project pic" style="width:27vw; min-width: 250px; height:auto;"></a>  
+                    </div>
+                    <div class="item hidden">
+                        <a data-toggle="modal" data-target="#ampItUP"
+                        style="text-decoration: none; color: inherit; cursor: pointer;"><img src="images/weatherappMainPic.png" class="card" alt="project pic" style="width:27vw; min-width: 250px; height:auto;"></a>  
+                    </div>
 
 
 

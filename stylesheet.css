@@ -159,6 +159,10 @@ strong {
     background-color: #000000;
 }
 
+.btn-link{
+    text-decoration: none;
+}
+
 .btn:hover {
     transform: scale(1.1)
 }
@@ -263,6 +267,7 @@ strong {
         box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     }
 }
+
 
 /* Add styles for touch events */
 .btn:active {
@@ -915,7 +920,7 @@ strong {
     display: flex; /* Use flexbox */
     align-items: center; /* Center vertically */
     justify-content: center; /* Center horizontally */
-    width: 490px;
+    width: 29vw;
     height: 300px;
     position: relative;
     margin: 20px;
