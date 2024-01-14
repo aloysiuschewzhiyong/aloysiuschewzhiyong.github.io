@@ -9,7 +9,6 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-        <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
         <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -17,10 +16,27 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <script defer src="app2.js"></script>
         <link rel="stylesheet" href="stylesheet.css" />
+        <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 
 
 
         <style>
+
+*{
+                padding:0;
+                margin:0;
+                box-sizing:border-box;
+            }
+
+            h1{
+                font-weight:500; margin-bottom:20px;   font-size: 5rem; 
+            }
+
+            h5{
+                font-size:1.625rem;
+            }
 
 
 
@@ -29,6 +45,20 @@
                 width: 100%;
                 height: 100%;
                 z-index: -1;
+            }
+
+
+            body {
+                padding:0px;
+                display:flex;
+                background-color: #000000;
+                font-family: 'Poppins';
+                font-size: 1.1rem;
+                color:white;
+                transition: 0.3s;
+                flex-direction: column;
+
+
             }
 
 
@@ -45,9 +75,71 @@
                 margin: 0;
             }
 
+            #typewriter {
+                font-size: 3rem;
+                font-weight: bolder;
+                color:white;
+            }
+
+
+            .containerHome{
+                display: flex;
+                justify-content: center;
+                padding:0;
+
+            }
+
+            .right {
+                width:80vw;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                flex:1;
+            }
+
+            .left {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                flex:1;
+            }
 
 
 
+
+            .btn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 13rem;
+                overflow: hidden;
+                height: 3rem;
+                background-size: 300% 300%;
+                backdrop-filter: blur(1rem);
+                border-radius: 5rem;
+                transition: 0.5s;
+                animation: gradient_301 5s ease infinite;
+                border: double 4px transparent;
+                background-image: linear-gradient(#000000, #000000), linear-gradient(137.48deg, #ffdb3b 10%, #ff9b17d7 45%, #f9ff41 67%, #feb200d7 87%);
+                background-origin: border-box;
+                background-clip: content-box, border-box;
+            }
+
+            #container-stars {
+                position: absolute;
+                z-index: -1;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                transition: 0.5s;
+                backdrop-filter: blur(1rem);
+                border-radius: 5rem;
+            }
 
             strong {
                 z-index: 3;
@@ -55,6 +147,33 @@
                 font-size: 20px;
 
                 color: #FFFFFF;
+            }
+
+            #glow {
+                position: absolute;
+                display: flex;
+                width: 122rem;
+            }
+
+            .circle {
+                width: 100%;
+                height: 30px;
+                filter: blur(2rem);
+                animation: pulse_3011 4s infinite;
+                z-index: -1;
+            }
+
+            .circle:nth-of-type(1) {
+                background: rgba(0, 0, 1860 0.936);
+            }
+
+            .circle:nth-of-type(2) {
+                background: rgba(0, 0, 1860 0.936);
+            }
+
+            .btn:hover #container-stars {
+                z-index: 1;
+                background-color: #000000;
             }
 
             .btn:hover {
@@ -73,7 +192,94 @@
                 background: #FE53BB;
             }
 
-       
+            #stars {
+                position: relative;
+                background: transparent;
+                width: 200rem;
+                height: 200rem;
+            }
+
+            #stars::after {
+                content: "";
+                position: absolute;
+                top: -10rem;
+                left: -100rem;
+                width: 100%;
+                height: 100%;
+                animation: animStarRotate 90s linear infinite;
+            }
+
+            #stars::after {
+                background-image: radial-gradient(#ffffff 1px, transparent 1%);
+                background-size: 50px 50px;
+            }
+
+            #stars::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: -50%;
+                width: 170%;
+                height: 500%;
+                animation: animStar 60s linear infinite;
+            }
+
+            #stars::before {
+                background-image: radial-gradient(#ffffff 1px, transparent 1%);
+                background-size: 50px 50px;
+                opacity: 0.5;
+            }
+
+            @keyframes animStar {
+                from {
+                    transform: translateY(0);
+                }
+
+                to {
+                    transform: translateY(-135rem);
+                }
+            }
+
+            @keyframes animStarRotate {
+                from {
+                    transform: rotate(360deg);
+                }
+
+                to {
+                    transform: rotate(0);
+                }
+            }
+
+            @keyframes gradient_301 {
+                0% {
+                    background-position: 0% 50%;
+                }
+
+                50% {
+                    background-position: 100% 50%;
+                }
+
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+
+            @keyframes pulse_3011 {
+                0% {
+                    transform: scale(0.75);
+                    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+                }
+
+                70% {
+                    transform: scale(1);
+                    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+                }
+
+                100% {
+                    transform: scale(0.75);
+                    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+                }
+            }
 
             /* Add styles for touch events */
             .btn:active {
@@ -84,8 +290,27 @@
                 background: #FE53BB;
             }
 
-        
-    
+            /* Media query for smaller screens (adjust the max-width as needed) */
+            @media only screen and (max-width: 600px) {
+                .btn:hover #container-stars {
+                    z-index: 1;
+                    background-color: #000000;
+                }
+
+                .btn:hover {
+                    transform: scale(1); /* Adjust as needed for mobile */
+                }
+
+                .btn:active {
+                    border: double 4px #FE53BB;
+                    background-origin: border-box;
+                    background-clip: content-box, border-box;
+                    animation: none;
+                }
+            }
+
+
+
             /* Navbar links text color before scrolling */
             .navbar-light .navbar-nav .nav-link {
                 color: black !important;
@@ -129,6 +354,27 @@
 
 
 
+            .about{
+                display: flex;
+                width:100%;
+                height: calc(100vh);
+                padding:78px 0px;
+
+            }
+
+            .skills{
+                width:100%;
+                height: calc(100vh);
+                padding:78px;   
+            }
+
+            .about img{
+                height: auto;
+                width: 200px;
+                float: left; /* Float the image to the left */
+                margin-right: 20px;
+            }
+
 
 
             .main{  
@@ -154,6 +400,24 @@
             }
 
 
+
+
+
+            .projects-text , .skills-text{
+                justify-content: center;
+            }
+
+
+
+            span{
+                color:yellow;
+            }
+
+
+
+            #pokemon{
+                padding: 20px 0;
+            }
 
 
 
@@ -483,7 +747,6 @@
 
 
 
-
                 .wrapper{
                     margin-top: 20px;
                     padding-left:100px;
@@ -508,6 +771,7 @@
                     border-radius: 30px;
                     box-shadow: 0 0 10px rgba(255, 240, 0, 0);
                     transition: transform 0.5s;
+                    padding:0;
                 }
 
                 .card:hover {
@@ -519,7 +783,12 @@
                     height:auto; margin:5px;
                 }
 
-                .card{padding:0;}
+
+
+
+
+
+
 
 
 
@@ -589,13 +858,17 @@
                         style="text-decoration: none; color: inherit; cursor: pointer;"><img src="images/healingHeat.png" class="card" alt="project pic" style="width:27vw; min-width: 250px; height:auto;"></a>  
                     </div>
                     <div class="item hidden">
-                        <a><img src="images/railedMainPic.png" class="card" alt="project pic" style="width:27vw; min-width: 250px; height:auto;"></a>  
+                        <a data-toggle="modal" data-target="#railedModal"><img src="images/railedMainPic.png" class="card" alt="project pic" style="width:27vw; min-width: 250px; height:auto;"></a>  
                     </div>
                     <div class="item hidden">
-                        <a><img src="images/bananaza1.png" class="card" alt="project pic" style="width:27vw; min-width: 250px; height:auto;"></a>  
+                        <a data-toggle="modal" data-target="#bananazaModal"><img src="images/bananaza1.png" class="card" alt="project pic" style="width:27vw; min-width: 250px; height:auto;"></a>  
                     </div>
                     <div class="item hidden">
-                        <a><img src="images/clickyClacky1.png" class="card" alt="project pic" style="width:27vw; min-width: 250px; height:auto;"></a>  
+                        <a data-toggle="modal" data-target="#clickyClackyModal"><img src="images/clickyClacky1.png" class="card" alt="project pic" style="width:27vw; min-width: 250px; height:auto;"></a>  
+                    </div>
+                    <div class="item hidden">
+                        <a data-toggle="modal" data-target="#healingClackModal"
+                        style="text-decoration: none; color: inherit; cursor: pointer;"><img src="images/healingClackPoster1.png" class="card" alt="project pic" style="width:27vw; min-width: 250px; height:auto;"></a>  
                     </div>
                  
 
