@@ -7,21 +7,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     </script>
 
     <script defer src="app2.js"></script>
@@ -115,63 +111,6 @@
 
             </script>
 
-            <script>
-
-                window.onload = function () {
-                    var cursor = document.getElementById('cursor');
-                    cursor.style.opacity = 1;
-                    cursor.classList.add('typing-cursor'); // Use classList to add a class
-                }
-
-
-                var speed = 39;
-                var deletespeed = 20;
-                var forward = true; // Flag to control typing direction
-
-                function typeWriter() {
-                    var i = 0;
-                    var typewriterElement = document.getElementById("typewriter");
-
-                    var initialText = "Hi, my name is Aloysius";
-                    var defaultText = "Welcome to my portfolio";
-
-                    var currentText = initialText; // Start with the initial text
-
-                    function type() {
-                        if (i < currentText.length && forward) {
-                            typewriterElement.textContent += currentText.charAt(i);
-                            i++;
-                            setTimeout(type, speed);
-                        } else {
-                            forward = false; // Change direction to rewinding
-                            setTimeout(rewind, 2000); // Wait for 2 seconds, then rewind
-                        }
-                    }
-
-                    function rewind() {
-                        if (i >= 0 && !forward) {
-                            typewriterElement.textContent = currentText.substring(0, i);
-                            i--;
-                            setTimeout(rewind, deletespeed);
-                        } else {
-                            forward = true; // Change direction to typing
-                            i = 0; // Reset the position
-
-                            // Switch between initial and default text
-                            currentText = currentText === initialText ? defaultText : initialText;
-                            setTimeout(type, 0); // Start typing again
-                        }
-                    }
-
-                    type();
-                }
-
-                // Start the typewriter effect after the window has loaded
-                window.onload = typeWriter;
-
-            </script>
-
-
 
 
     </section><br><br>
@@ -199,7 +138,6 @@
         <div class="main hidden">
             <div class="skill-text">
                 <h1>Skills</h1>
-                <h5>Various <span>skills</span> I am proficient in</h5>
 
 
             </div>
@@ -497,10 +435,10 @@
                                         <p class="card-text"
                                             style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">
                                             Adobe XD</p>
-                                            <p class="card-text"
+                                        <p class="card-text"
                                             style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">
                                             Illustrator</p>
-                                            <p class="card-text"
+                                        <p class="card-text"
                                             style=" display: inline-block; background: white; padding: 5px 10px 5px 10px; border-radius: 10px; color: black; font-size: 15px">
                                             Photoshop</p>
                                     </div>
@@ -522,7 +460,8 @@
                                 <div class="col">
                                     <div class="card-body">
                                         <h4 class="card-title" style="text-align:left;">Spicy Nuggets Poster</h4>
-                                        <p class="card-text">This digital illustration is a poster made to be used by McDonalds to advertise their seasonal Spicy Nuggets.</p>
+                                        <p class="card-text">This digital illustration is a poster made to be used by
+                                            McDonalds to advertise their seasonal Spicy Nuggets.</p>
                                         <p class="card-text"><small class="text-muted">Digital Illustration</small></p>
                                         <div class="skillsForProjects">
                                             <p class="card-text"
@@ -632,17 +571,17 @@
         (function () {
             emailjs.init("fU-Ag65lyma2unMCO");
         })();
-    
+
         document.querySelector('.contact-form').addEventListener('submit', function (event) {
             event.preventDefault();
-    
+
             var params = {
                 from_name: document.getElementById('from_name').value,
                 email: document.getElementById('email').value,
                 subject: document.getElementById('subject').value,
                 message: document.getElementById('message').value
             };
-    
+
             emailjs.send('service_lbizyk6', 'template_z4nx5wv', params)
                 .then(function (response) {
                     console.log('SUCCESS!', response.status, response.text);
