@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aloysius Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+      * {
+        font-family: "Inter", sans-serif;
+        color: #00071c;
+      }
+
+      h1, h2,h3,h4,h5{
+        background: -webkit-linear-gradient(#5c5c5c, #00071c);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      p {
+        font-weight: 600;
+        color: #5a606e;
+      }
+
+      body::-webkit-scrollbar {
+        display: none;
+      }
+
+      body {
+        font-family: Inter, sans-serif;
+        transition: background-color 0.3s ease;
+        margin: 0;
+        padding: 0;
+        letter-spacing: -0.04rem;
+      }
+
+      section {
+        height: 100vh;
+      }
+
+      .header {
+        position: fixed;
+        top: 0;
+        z-index: 1;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.9);
+      }
+
+      .progress-container {
+        width: 100%;
+        height: 3px;
+        background: #ccc;
+      }
+
+      .progress-bar {
+        height: 3px;
+        background: #14161a;
+        width: 0%;
+      }
+
+      .hero-grid-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url(images/herogridBG.png);
+        height: 100vh;
+        width: 100vw;
+        box-shadow: 0 0 120px 120px white inset;
+      }
+
+      .hero-text-container {
+        position: relative;
+      }
+
+      h1 {
+        font-size: 5rem;
+        margin: 0;
+        letter-spacing: -0.2rem;
+        display: inline-block;
+      }
+
+      .typing-cursor {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -1em;
+        width: 0.5em;
+        height: 80%;
+        background-color: #14161a;
+        animation: blinkCursor 0.7s infinite;
+      }
+
+      @keyframes blinkCursor {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      .about .card {
+        width: 69vw;
+        height: 75vh;
+        margin: 0 auto;
+        background-color: white;
+        border-radius: 8px;
+        z-index: 1;
+        box-shadow: rgb(166, 166, 166) 0px 0px 10px 0px;
+      }
+
+      .about .tools {
+        display: flex;
+        align-items: center;
+        padding: 9px;
+      }
+
+      .about .circle {
+        padding: 0 4px;
+      }
+
+      .about .box {
+        display: inline-block;
+        align-items: center;
+        width: 10px;
+        height: 10px;
+        padding: 1px;
+        border-radius: 50%;
+      }
+
+      .about .red {
+        background-color: #ff605c;
+      }
+
+      .about .yellow {
+        background-color: #ffbd44;
+      }
+
+      .about .green {
+        background-color: #00ca4e;
+      }
+
+      .about .red:hover {
+        background-color: #d24d4b;
+      }
+
+      .about .yellow:hover {
+        background-color: #e0a639;
+      }
+
+      .about .green:hover {
+        background-color: #00ae43;
+      }
+
+      .container-left,
+      .container-right {
+        width: 50%;
+      }
+    </style>
+    <style>
+      .contact {
+        width: 100vw;
+        border-top: 1px solid #ccc;
+        padding: 50px 0;
+        text-align: center;
+        display: flex;
+      }
+
+      .contact h1 {
+        font-size: 5rem;
+        margin-bottom: 10px;
+      }
+
+      .contact h5 {
+        font-size: 2.1rem;
+        color: #555;
+        margin-bottom: 30px;
+      }
+
+      .contact span {
+        color: #00ae43; /* Change color as needed */
+      }
+
+      .input-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+      }
+
+      .input-row input[type="text"],
+      .input-row input[type="email"] {
+        width: calc(50% - 10px);
+        padding: 10px;
+        border: 3px solid black;
+        border-radius: 5px;
+        font-size: 1rem;
+        margin-bottom: 15px;
+        transition: border-color 0.3s ease;
+        box-shadow: 4px 4px black;
+      }
+
+      .input-row input[type="text"]:focus,
+      .input-row input[type="email"]:focus,
+      textarea:focus {
+        outline: none;
+        border-color: #00ae43; /* Change color as needed */
+      }
+
+      textarea {
+        width: 100%;
+        height: 150px;
+        resize: none;
+      }
+
+      .btn {
+        background-color: #00ae43; /* Change color as needed */
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        border: 3px solid black;
+        margin-bottom: 15px;
+        transition: border-color 0.3s ease;
+        box-shadow: 4px 4px black;
+      }
+
+      .btn:hover {
+        background-color: #007d2a; /* Change color as needed */
+      }
+
+      .contact-form #subject,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border: 3px solid black;
+        border-radius: 5px;
+        font-size: 1rem;
+        margin-bottom: 15px;
+        transition: border-color 0.3s ease;
+        box-shadow: 4px 4px black;
+      }
+
+      .contact-form #subject:focus {
+        outline: none;
+        border-color: #00ae43; /* Change color as needed */
+      }
+
+      .card__content {
+        line-height: 1.5;
+      }
+
+      /* about */
+      .about .card__content {
+        display: flex;
+        padding: 3vw 6.9vw;
+      }
+      
+      .about-socials{
+        margin:30px 0;
+      }
+
+      .about i {
+        color: #373737;
+        margin-right: 30px;
+        font-size: 30px;
+        width: 30px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 30%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h2>Scroll Indicator</h2>
+      <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="hero-grid-container">
+        <div class="hero-text-container">
+          <h1 id="typewriter-text"></h1>
+          <span class="typing-cursor"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="card">
+        <div class="tools">
+          <div class="circle">
+            <span class="red box"></span>
+          </div>
+          <div class="circle">
+            <span class="yellow box"></span>
+          </div>
+          <div class="circle">
+            <span class="green box"></span>
+          </div>
+        </div>
+        <div class="card__content">
+          <div class="container-left"></div>
+          <div class="container-right">
+            <h1>About me</h1>
+            <h2>Designer & Developer</h2>
+            <p>
+              Hi, my name is Aloysius Chew and I am a year 2 student at Republic
+              Polytechnic studying Digital Design and Development and working
+              towards being a developer. This website will feature some of my
+              works in the projects tab.
+            </p>
+
+            <div class="about-socials">
+              <a href="mailto:22001095@myrp.edu.sg"><i class="fa-regular fa-envelope"></i></a>
+              <a href="https://github.com/aloysiuschewzhiyong"><i class="fa-brands fa-github"></i></a>
+              <a href="https://www.instagram.com/chikennuggetcurrysauce/"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://www.linkedin.com/in/aloysius-chew-880609244/"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills">
+
+
+    </section>
+
+    <section class="contact">
+      <div class="container-left">
+        <h1>Contact me</h1>
+        <h5>I will get back to you <span>ASAP</span></h5>
+      </div>
+      <div class="container-right">
+        <form action="" class="contact-form">
+          <div class="input-row">
+            <input
+              type="text"
+              id="from_name"
+              placeholder="Your Name"
+              required
+            />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email"
+              required
+            />
+          </div>
+          <input
+            type="text"
+            id="subject"
+            placeholder="Write a subject"
+            required
+          />
+          <textarea
+            name="enquire"
+            id="message"
+            cols="10"
+            rows="1"
+            placeholder="Your Message"
+            required
+          ></textarea>
+
+          <button
+            class="btn"
+            type="submit"
+            style="width: 100%; margin-top: 25px"
+          >
+            <strong>Submit</strong>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <script>
+      //hero text
+      var speed = 75;
+      var deletespeed = 50;
+      var forward = true;
+
+      function typeWriter() {
+        var i = 0;
+        var typewriterElement = document.getElementById("typewriter-text");
+
+        var initialText = "Hi, my name is Aloysius";
+        var defaultText = "Welcome to my portfolio";
+
+        var currentText = initialText;
+
+        function type() {
+          if (i < currentText.length && forward) {
+            typewriterElement.textContent += currentText.charAt(i);
+            i++;
+            setTimeout(type, speed);
+          } else {
+            forward = false;
+            setTimeout(rewind, 2000);
+          }
+        }
+
+        function rewind() {
+          if (i >= 0 && !forward) {
+            typewriterElement.textContent = currentText.substring(0, i);
+            i--;
+            setTimeout(rewind, deletespeed);
+          } else {
+            forward = true;
+            i = 0;
+
+            currentText =
+              currentText === initialText ? defaultText : initialText;
+            setTimeout(type, 0);
+          }
+        }
+
+        type();
+      }
+
+      typeWriter();
+
+      //scroll indicator
+      window.onscroll = function () {
+        myFunction();
+      };
+
+      function myFunction() {
+        var winScroll =
+          document.body.scrollTop || document.documentElement.scrollTop;
+        var height =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("myBar").style.width = scrolled + "%";
+      }
+    </script>
+  </body>
+</html>
