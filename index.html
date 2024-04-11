@@ -139,9 +139,10 @@
         height: 75vh;
         margin: 0 auto;
         background-color: white;
-        border-radius: 8px;
+        border-radius: 16px;
         z-index: 1;
-        box-shadow: rgb(166, 166, 166) 0px 0px 10px 0px;
+        box-shadow: var(--main) 7px 7px;
+        border: 3px solid var(--main);
       }
 
       .about .tools {
@@ -434,6 +435,9 @@
 
       .nav-logo {
         width: 69px;
+        color: var(--main);
+        font-size: 1.5rem;
+        font-weight: 800;
       }
 
       .dropdown-menu {
@@ -504,7 +508,7 @@
       <nav class="navbar">
         <a href="index.html">
           <div class="nav-logo">
-            <img src="images/logo.png" alt="logo" />
+            <b>&lt;AC.&gt;</b>
           </div>
         </a>
         <ul class="nav-menu">
