@@ -1,116 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Light/Dark Mode Toggle</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        transition: background-color 0.3s ease;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      height:200vh;
+    }
 
-      header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px;
-        background-color: #f0f0f0;
-      }
+    .line-container {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
 
-      .content {
-        padding: 20px;
-      }
+  </style>
+</head>
+<body>
+  <div class="line-container">
+    <svg preserveAspectRatio="xMidYMax meet" id="Layer_2" data-name="Layer 2" viewBox="0 0 1924.79 1814.37">
+      <defs>
+        <style>
+          .cls-1 {
+            fill: none;
+            stroke: #000;
+            stroke-miterlimit: 10;
+            stroke-width: 10px;
+          }
+        </style>
+      </defs>
+      <path class="cls-1" d="M2.71,7.87S192.21-12.87,260.21,57.13s71,409,305,458,903-445,1178-54c256.29,364.4-11.16,691.45-153.97,756.12-10.42,4.72-20.19,8.04-29.03,9.88-130,27-545-36-691-107s-388,8-361,393c0,0,27,522.79-505.5,179.39"/>
+      <path class="cls-1" d="M1922.71,1707.84s-1780.98,347.58-568.49-480.82"/>
+      <path class="cls-1" d="M1922.71,1472.95s-722.93,331.07-463.97-239.62"/>
+    </svg>
+  </div>
 
-      /* Switch styles */
-      .switch {
-        position: relative;
-        display: inline-block;
-        width: 60px;
-        height: 34px;
-      }
+  <script>
+    let paths = document.querySelectorAll('.cls-1');
 
-      .switch input {
-        opacity: 0;
-        width: 0;
-        height: 0;
-      }
+    paths.forEach((path) => {
+      let pathLength = path.getTotalLength();
 
-      .slider {
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #ccc;
-        transition: 0.4s;
-        border-radius: 34px;
-      }
+      path.style.strokeDasharray = pathLength + ' ' + pathLength;
+      path.style.strokeDashoffset = pathLength;
 
-      .slider:before {
-        position: absolute;
-        content: "";
-        height: 26px;
-        width: 26px;
-        left: 4px;
-        bottom: 4px;
-        background-color: white;
-        transition: 0.4s;
-        border-radius: 50%;
-      }
+      window.addEventListener('scroll', () => {
+        var scrollTop = window.scrollY || window.pageYOffset;
+        var scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrollPercentage = scrollTop / scrollHeight;
+        var drawLength = pathLength * scrollPercentage;
 
-      input:checked + .slider {
-        background-color: #2196f3;
-      }
+        path.style.strokeDashoffset = pathLength - drawLength;
+      });
+    });
 
-      input:focus + .slider {
-        box-shadow: 0 0 1px #2196f3;
-      }
-
-      input:checked + .slider:before {
-        transform: translateX(26px);
-      }
-
-      /* Rounded sliders */
-      .slider.round {
-        border-radius: 34px;
-      }
-
-      .slider.round:before {
-        border-radius: 50%;
-      }
-
-      /* Dark mode styles */
-      .dark-theme {
-        background-color: #222;
-        color: #fff;
-      }
-
-      .dark-theme header {
-        background-color: #333;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>Light/Dark Mode Toggle</h1>
-      <label class="switch">
-        <input type="checkbox" id="toggle" onchange="toggleTheme()" />
-        <span class="slider round"></span>
-      </label>
-    </header>
-
-    <div class="content">
-      <p>This is some content.</p>
-      <p>More content here.</p>
-    </div>
-
-    <script>
-      function toggleTheme() {
-        const body = document.body;
-        body.classList.toggle("dark-theme");
-      }
-    </script>
-  </body>
+  </script>
+</body>
 </html>

@@ -51,13 +51,17 @@
 
       section {
         height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1 solid reds;
       }
 
       .header {
         transition: top 0.1s ease-in-out;
         position: fixed;
         top: -100px;
-        z-index: 1;
+        z-index: 100;
         width: 100%;
         background-color: var(--bg);
       }
@@ -140,7 +144,6 @@
         margin: 0 auto;
         background-color: white;
         border-radius: 16px;
-        z-index: 1;
         box-shadow: var(--main) 7px 7px;
         border: 3px solid var(--main);
       }
@@ -177,15 +180,15 @@
       }
 
       .about .red:hover {
-        background-color: #d24d4b;
+        background-color: #c34442;
       }
 
       .about .yellow:hover {
-        background-color: #e0a639;
+        background-color: #c39135;
       }
 
       .about .green:hover {
-        background-color: var(--accent);
+        background-color: #029138;
       }
 
       .container-left,
@@ -305,9 +308,11 @@
       }
 
       /* skills */
+
+
       .bento {
         display: grid;
-        padding: 10vw;
+        width: 69vw;
         height: 70vh;
         grid-template-columns: repeat(4, 1fr) 1.5fr;
         grid-template-rows: repeat(5, 1fr);
@@ -327,7 +332,7 @@
       }
 
       .bento-slot:hover {
-        transform: scale(1.05);
+        transform: scale(1.02);
         z-index: 100;
       }
 
@@ -501,14 +506,40 @@
           transform: translateY(-8px) rotate(-45deg);
         }
       }
+
+      
+    .line-container {
+      position: absolute;
+      top:100vh;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
     </style>
+    
   </head>
   <body>
+    <div class="line-container">
+      <svg  id="Layer_1" data-name="Layer 1" viewBox="0 0 1931.63 1815.67">
+        <defs>
+          <style>
+            .cls-1 {
+              fill: none;
+              stroke: #000;
+              stroke-miterlimit: 10;
+              stroke-width: 5px;
+            }
+          </style>
+        </defs>
+        <path class="cls-1" d="M1.05,15.42S205.05-78.58,350.05,240.42,38.05,573.42,85.05,287.42s249-165,206,86c-31.62,184.59,123.34,251.28,207.56,273.64,30.26,8.04,62.52,1.7,87.54-17.12,241.87-181.92,1607.1-1173.18,1270.66-107.53,0,0-36.59,123.01-146.17,135.01s-157.59,173-157.59,173c0,0-55,204,190,192,199.28-9.76,143.18,211.38,115.3,294.25-8.36,24.85-25.9,45.68-49.19,57.71-42.57,21.97-105.68,25.73-104.65-146.06,1.38-231.39-235.3-107.25-285.61-78.26-6.75,3.89-13.9,7-21.35,9.26-110.48,33.47-950.29,275.4-1186.49-29.89C-7.78,846.59,57.67,1220.6,79.35,1326.79c5.05,24.73,18.91,46.95,39.4,61.7,32.02,23.06,77.18,25.56,90.3-125.07,21-241-335,155-112,272s699-262,905-82,648,327.62,927.5,188.31"/>
+      </svg>
+    </div>
+  
     <div class="header">
       <nav class="navbar">
         <a href="index.html">
           <div class="nav-logo">
-            <b>&lt;AC.&gt;</b>
+            <b>&lt;AC&gt;</b>
           </div>
         </a>
         <ul class="nav-menu">
@@ -631,7 +662,7 @@
           <h3>Miscellenous</h3>
         </div>
         <div class="bento-slot div5">
-          <h2>See work</h2>
+          <h3>See projects</h3>
         </div>
       </div>
     </section>
@@ -770,6 +801,37 @@ function scrollFunction() {
         hamburger.classList.remove("active");
         navMenu.classList.remove("active");
       }
+
+
+
+      let paths = document.querySelectorAll('.cls-1');
+
+paths.forEach((path) => {
+  let pathLength = path.getTotalLength();
+  let windowHeight = window.innerHeight;
+
+  path.style.strokeDasharray = pathLength + ' ' + pathLength;
+  path.style.strokeDashoffset = pathLength;
+
+  window.addEventListener('scroll', () => {
+    var scrollTop = window.scrollY || window.pageYOffset;
+    var scrollHeight = document.documentElement.scrollHeight - windowHeight; // Adjusted for window height
+    var scrollPercentage = scrollTop / (scrollHeight - (windowHeight * 1.1)); // Adjusted scroll percentage
+
+    var drawLength = pathLength * scrollPercentage;
+
+    if (scrollPercentage > 1) {
+      path.style.strokeDashoffset = 0; // Finish animation a bit before reaching the bottom
+    } else {
+      path.style.strokeDashoffset = pathLength - drawLength;
+    }
+  });
+});
+
+
+
     </script>
+
+    
   </body>
 </html>
