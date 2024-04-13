@@ -54,7 +54,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        border: 1 solid reds;
       }
 
       .header {
@@ -199,7 +198,6 @@
     <style>
       .contact {
         width: 100vw;
-        border-top: 1px solid #ccc;
         padding: 50px 0;
         text-align: center;
         display: flex;
@@ -321,7 +319,7 @@
       }
 
       .bento .bento-slot {
-        border: 3px solid black;
+    border: 3px solid black;
         border-radius: 20px;
         box-shadow: 5px 5px black;
         transition: transform 0.3s ease;
@@ -331,7 +329,7 @@
         padding: 20px;
       }
 
-      .bento-slot:hover {
+      .bento-slot:hove hiddenr {
         transform: scale(1.02);
         z-index: 100;
       }
@@ -511,27 +509,87 @@
     .line-container {
       position: absolute;
       top:100vh;
-      width: 100%;
+      left: -1vh;
+      width: 102.1%;
       height: 100%;
       z-index: -1;
     }
     </style>
+
+    <style>
+/*animation css*/
+@media (prefers-reduced-motion: no-preference) {
+    .hidden {
+        transition: all 0.1s;
+    }
+
+    .hidden {
+        filter: blur(2px);
+        transform: scale(0.01);
+        transition: all 0.3s;
+    }
+
+    .hiddenLeft {
+        opacity: 0;
+        filter: blur(2px);
+        transform: translateX(-50%);
+        transition: all 1s;
+    }
+
+    .hiddenRight {
+        opacity: 0;
+        filter: blur(2px);
+        transform: translateX(+50%);
+        transition: all 1s;
+    }
+
+    .bento-slot:nth-child(1) {
+                transition-delay: 0ms;
+    }
+    .bento-slot:nth-hiddenchild(2) {
+                transition-delay: 600ms;
+    }
+
+    .bento-slot:nth-hiddenchild(3) {
+                transition-delay: 800ms;
+    }
+
+    .bento-slot:nth-hiddenchild(4) {
+                transition-delay: 300ms;
+    }
+
+    
+    .bento-slot:nth-hiddenchild(5) {
+                transition-delay: 1000ms;
+    }
+
+    .show {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0) translateY(0);
+    }
+    
+}
+
+    </style>
+
     
   </head>
   <body>
     <div class="line-container">
-      <svg  id="Layer_1" data-name="Layer 1" viewBox="0 0 1931.63 1815.67">
+      <svg id="Layer_5" data-name="Layer 5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1919.89 1750.5">
         <defs>
           <style>
             .cls-1 {
               fill: none;
-              stroke: #000;
+              stroke: var(--main);
               stroke-miterlimit: 10;
-              stroke-width: 5px;
+              stroke-width: 6.9px;
+              filter: blur(2px);
             }
           </style>
         </defs>
-        <path class="cls-1" d="M1.05,15.42S205.05-78.58,350.05,240.42,38.05,573.42,85.05,287.42s249-165,206,86c-31.62,184.59,123.34,251.28,207.56,273.64,30.26,8.04,62.52,1.7,87.54-17.12,241.87-181.92,1607.1-1173.18,1270.66-107.53,0,0-36.59,123.01-146.17,135.01s-157.59,173-157.59,173c0,0-55,204,190,192,199.28-9.76,143.18,211.38,115.3,294.25-8.36,24.85-25.9,45.68-49.19,57.71-42.57,21.97-105.68,25.73-104.65-146.06,1.38-231.39-235.3-107.25-285.61-78.26-6.75,3.89-13.9,7-21.35,9.26-110.48,33.47-950.29,275.4-1186.49-29.89C-7.78,846.59,57.67,1220.6,79.35,1326.79c5.05,24.73,18.91,46.95,39.4,61.7,32.02,23.06,77.18,25.56,90.3-125.07,21-241-335,155-112,272s699-262,905-82,648,327.62,927.5,188.31"/>
+        <path class="cls-1" d="M0,.83C133.1-1,266.31,4.83,398.73,18.28c87.21,8.86,179.83,20.61,258.31,61.66,88.39,46.24,166.77,114.88,267.37,132.51,113.1,19.82,228.39,3.53,341.74-5.05,134.73-10.21,271.04-9.82,404,14.26,55.94,10.13,114.05,26.04,154.18,66.3,48.11,48.27,60.54,122.86,51.77,190.44-15.95,122.85-93.61,232.18-193.56,305.36-99.95,73.19-220.6,113.43-342.24,136.88-311.46,60.04-622.01-2.29-926.42-71.25-93.32-21.14-207.42-36.82-262.9,61.43-29.14,51.6-30.56,115.19-16.79,172.83,11.1,46.45,32.79,92.21,70.35,121.7,43.68,34.29,102.21,42.04,157.69,44.31,308.13,12.64,601.22-101.97,901.57-150.53,78.51-12.69,157.94-21,237.52-21.62,63.64-.5,132.6,3.63,186.08,42.04,35.62,25.58,61.78,65.79,65.12,109.51,4.03,52.8-25.32,103.96-65.82,138.07s-91.08,53.71-141.45,70.03c-373.77,121.05-776.92,90.45-1168.86,117.75-73.01,5.08-146.24,12.28-217.08,30.67-26.7,6.93-57.81,21.01-60.41,48.48-2.78,29.39,29.11,49.08,56.97,58.84,69.34,24.31,142.89,34,216.06,40.79,144.68,13.42,290.15,16.05,435.45,16.29,335.95,.56,671.14-14.64,1006.39-34.29,35.36-2.07,70.72-4.18,106.08-6.3"/>
       </svg>
     </div>
   
@@ -593,14 +651,14 @@
     <section class="hero">
       <div class="hero-grid-container">
         <div class="hero-text-container">
-          <h1 id="typewriter-text"></h1>
+          <h1 id="typewriter-text" class="hidden"></h1>
           <span class="typing-cursor"></span>
         </div>
       </div>
     </section>
 
     <section class="about">
-      <div class="card">
+      <div class="card hidden">
         <div class="tools">
           <div class="circle">
             <span class="red box"></span>
@@ -645,23 +703,23 @@
 
     <section class="skills">
       <div class="bento">
-        <div class="bento-slot div1">
+        <div class="bento-slot div1 hidden">
           <h2>Skills</h2>
         </div>
-        <div class="bento-slot div2">
+        <div class="bento-slot div2 hidden">
           <h3>Front-end</h3>
           <div class="icon-container">
             <i class="devicon-python-plain"></i>
             <p>Python</p>
           </div>
         </div>
-        <div class="bento-slot div3">
+        <div class="bento-slot div3 hidden">
           <h3>Back-end</h3>
         </div>
-        <div class="bento-slot div4">
+        <div class="bento-slot div4 hidden">
           <h3>Miscellenous</h3>
         </div>
-        <div class="bento-slot div5">
+        <div class="bento-slot div5 hidden">
           <h3>See projects</h3>
         </div>
       </div>
@@ -716,6 +774,30 @@
     </section>
 
     <script>
+
+      //animation
+document.addEventListener('DOMContentLoaded', function () {
+    const observeHiddenElements = (selector) => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                } else {
+                    entry.target.classList.remove('show');
+                }
+            });
+        });
+
+        const hiddenElements = document.querySelectorAll(selector);
+        hiddenElements.forEach((el) => observer.observe(el));
+    };
+
+    observeHiddenElements('.hidden');
+    observeHiddenElements('.hiddenLeft');
+    observeHiddenElements('.hiddenRight');
+});
+
+
       //hero text
       var speed = 60;
       var deletespeed = 39;
@@ -813,16 +895,22 @@ paths.forEach((path) => {
   path.style.strokeDasharray = pathLength + ' ' + pathLength;
   path.style.strokeDashoffset = pathLength;
 
+  let animationStarted = false; // Flag to track if animation has started
+
   window.addEventListener('scroll', () => {
     var scrollTop = window.scrollY || window.pageYOffset;
     var scrollHeight = document.documentElement.scrollHeight - windowHeight; // Adjusted for window height
-    var scrollPercentage = scrollTop / (scrollHeight - (windowHeight * 1.1)); // Adjusted scroll percentage
+    var scrollPercentage = (scrollTop - windowHeight * 0.5) / (windowHeight * 1.5); // Start at 50vh and finish before 200vh
 
     var drawLength = pathLength * scrollPercentage;
 
     if (scrollPercentage > 1) {
       path.style.strokeDashoffset = 0; // Finish animation a bit before reaching the bottom
-    } else {
+    } else if (scrollPercentage > 0) { // Start animation after scrolling 50vh
+      if (!animationStarted) {
+        path.style.transition = 'stroke-dashoffset 0.2s ease-in'; // Smooth transition
+        animationStarted = true; // Set flag to true to indicate animation has started
+      }
       path.style.strokeDashoffset = pathLength - drawLength;
     }
   });
